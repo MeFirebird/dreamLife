@@ -1,0 +1,61 @@
+<input type="hidden" id="currentId" value="$yogmsPage.current"/>
+<input type="hidden" id="totalPageId" value="$yogmsPage.totalPage"/>
+
+<input type="hidden" id="baseurl" value=""/>
+
+
+<style>
+    #pager {
+        text-align: right;
+    }
+
+    #pager .pagination {
+        margin: 0 0 20px 0;
+    }
+
+    #pager .pagination li.disabled > a:hover{
+        /*background:transparent;*/
+        background:#FFFFFF;
+    }
+    .pagination > li > a {
+        color: #52A6ED;
+    }
+
+    #pager .pagination a:hover {
+        background: #A0CDEF;
+    }
+</style>
+
+<nav id="pager">
+    <ul class="pagination">
+        #if($yogmsPage.current == 1)   ## 当前页是第一页，所以不能在上一页了哦！
+            <li class="disabled"><a href="#">上一页</a></li>
+        #else
+            #set($tpix = $yogmsPage.current - 1)    ## 当前页不是第一页，所以可用
+        ##            <li><a href="$!R.newsIndex?type=$!type&pix=$tpix">上一页</a></li>
+        ##            <li><a href="pix=$tpix">上一页</a></li>
+            <!--既然是通用的不应该只是新闻的，我写了一个通用的地址 pageUrl，当前页属性为current不是pix-->
+            <li><a href="$!pageUrl?current=$tpix">上一页</a></li>
+        #end
+
+        #foreach($page in $pages)
+            #if($!yogmsPage.current == $page.pageNo)     ## 如果是当前页，当前页button禁用
+                <li class="disabled"><span>$!page.pageNo</span></li>   ## 禁用
+            #else
+                <li><a href="$!page.pageUrl">$!page.pageNo</a></li>
+            #end
+        #end
+
+        #if($!yogmsPage.current >= $!yogmsPage.totalPage)       ## 页码  >=  总页数
+            <li class="disabled"><span>下一页</span></li>
+        #else
+            #set($tpix = $yogmsPage.current + 1)
+            <!--既然是通用的不应该只是新闻的，我写了一个通用的地址 pageUrl-->
+            <li><a href="$!pageUrl?current=$tpix">下一页</a></li>
+        #end
+    </ul>
+    <div style="float:right;">
+        <input type="text" placeholder="总页数：${yogmsPage.totalPage}"
+               style="height: 36px;border-width:0;text-align:center;" disabled>
+    </div>
+</nav>

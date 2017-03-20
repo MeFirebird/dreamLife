@@ -1,0 +1,22 @@
+
+
+1.css的first-child选择器，p：first-child，选择p元素作为子元素，且p元素是其容器的第一个元素。
+  first-child
+  first-of-type
+
+2.对bootstrap的理解：快速建站用得到，一些简单的网站用这个还是可以得！
+
+3.word-spacing 和 letter-spacing
+
+4.AjaxResult:这个类到底何用呢？  如何理解？  OK
+
+5.ModelAndView，  ModelMap？   设置R r的时候，ModelAndView不行？看来不是得！
+
+二：做事心得
+    1.凡事都不能一劳永逸，总需要一个折返的过程！ 不可能总是一步到位的哦！
+    2.迭代的思想，一步一步的来！
+
+
+
+优化：
+      1.文字配图片，配音乐（整个网站都要有哦）  还有视频吧！

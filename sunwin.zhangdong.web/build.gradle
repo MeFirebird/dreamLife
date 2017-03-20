@@ -1,0 +1,18 @@
+group 'zhangdong'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':sunwin.zhangdong.dao')
+    compile project(':sunwin.zhangdong.service')
+}
+
+war {
+    webXml = file('src/main/resources/web.xml') // copies a file to WEB-INF/web.xml
+}

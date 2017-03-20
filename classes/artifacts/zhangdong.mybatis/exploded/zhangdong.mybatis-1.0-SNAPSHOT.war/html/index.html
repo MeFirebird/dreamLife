@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>南京青奥公园门户网站</title>
+    <!-- 路径问题，IDE宽松，但浏览器不认路径哦 -->
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/index/index.css" rel="stylesheet"/>
+    <style>
+        .navbar-brand {
+            padding: 0;
+            line-height: 50px;
+        }
+
+        .navbar-brand > img {
+            display: inline-block;
+        }
+
+        .navbar-inverse {
+            margin-bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar  navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="row">
+            <div  id="placeholder" class="col-md-1"></div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="col-md-2">
+                <div class="navbar-header" style="opacity:1;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/index/logo.png" alt=""/>
+                        <span>南京青奥公园</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5" id="middle">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="opacity:1;">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">首页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">新闻资讯</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">公园公告</a></li>
+                                <li><a href="#">公园快讯</a></li>
+                                <li><a href="#">健身咨询</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">文体活动</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">体育赛事</a></li>
+                                <li><a href="#">文艺演出</a></li>
+                                <li><a href="#">其他活动</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">公园服务</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">体育赛事</a></li>
+                                <li><a href="#">文艺演出</a></li>
+                                <li><a href="#">其他活动</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">体育赛事</a></li>
+                                <li><a href="#">文艺演出</a></li>
+                                <li><a href="#">其他活动</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+
+
+                </div><!-- /.navbar-collapse -->
+            </div>
+            <div class="col-md-4" id="right" style="padding-left:0;">
+                <div class="nav navbar-nav navbar-left">
+                    <form class="navbar-form navbar-left" role="search" style="padding-left:0;">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm col-md-1" placeholder="站内搜索">
+                        </div>
+                        <button type="submit" class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">登录</a></li>
+                        <li><a href="">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="../img/index/banner1.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/index/banner2.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/index/banner3.jpg" alt="...">
+
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top:10px;">
+    <div class="row">
+        <div class="col-md-3" id="subscribe" style="height:250px;">
+            <h2>场馆预约</h2>
+        </div>
+        <div class="col-md-3" id="weather" style="height:250px;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>南京市</h2>
+                    <h4>2016<span>年</span>9<span>月</span>27<span>日</span></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5" style="padding:0;">
+                    <img src="../img/weather/new/中雨.png" alt="" width="100" height="70">
+                </div>
+                <div class="col-xs-7" style="padding-left:0;">
+                    <h2 style="color:#FDB547;">17~24<strong>℃</strong></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="index">
+                    <div class="col-lg-6" style="" data-toggle="tooltip" data-placement="top"
+                         title="">
+                        <span class="yois-icon-tab-circle"></span>
+                        <img src="../img/weather/index-icon/chenglian.gif" height="25" width="25"/>
+                        <span>晨练指数</span>
+                    </div>
+                    <div class="col-lg-6" style="text-align:center;" data-toggle="tooltip"
+                         data-placement="top"
+                         title="$UVindex">
+                        <span class="yois-icon-tab-circle"></span>
+                        <img src="../img/weather/index-icon/uv.gif" height="25" width="25"/>
+                        <span>紫外指数</span>
+                    </div>
+                    <div class="col-lg-6" style="" data-toggle="tooltip" data-placement="top"
+                         title="">
+                        <span class="yois-icon-tab-circle"></span>
+                        <img src="../img/weather/index-icon/chuanyi.gif" height="25" width="25"/>
+                        <span>穿衣指数</span>
+                    </div>
+                    <div class="col-lg-6" style="text-align:center" data-toggle="tooltip"
+                         data-placement="top"
+                         title="">
+                        <span class="yois-icon-tab-circle"></span>
+                        <img src="../img/weather/index-icon/yd.gif" height="25" width="25"/>
+                        <span>运动指数</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row predict">
+                <ul class="nav" role="tablist">
+                    <li role="presentation">今天</li>
+                    <li role="presentation">明天</li>
+                    <li role="presentation">后天</li>
+                </ul>
+                <div class="col-lg-12" style="padding:0;">
+                    <ul class="list-unstyled" style="margin-bottom:0;">
+                        <li>
+                            <div class="weather" style="height:20px;width:20px;"></div>
+                            <span>6~14℃</span>
+                        </li>
+                        <li>
+                            <div class="weather" style="height:20px;width:20px;"></div>
+                            <span style="font-size:12px;">8~18℃</span>
+                        </li>
+                        <li>
+                            <div class="weather" style="height:20px;width:20px;"></div>
+                            <span>11~21℃</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" id="match" style="height:250px;text-align:center;">
+            <h3>体育赛事</h3>
+
+            <h3>文艺演出</h3>
+
+            <p>这是最新的体育赛事或文艺演出的标题</p>
+
+            <div class="img-match">
+                <img src="../img/index/match.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-3" id="cooperate" style="height:250px;">
+            <h2>商务合作</h2>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-xs-3 welcome">
+                <img src="../img/index/logo.png" alt=""/>
+
+                <div class="footer-title">
+                    <h5>南京青奥公园欢迎您！</h5>
+                    <h5>NanJing Youth Olympic Park</h5>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="social">
+                    <ul>
+                        <li><span>互动社区</span></li>
+                        <li>
+                            <img src="../img/index/qq.png" alt=""/>
+                        </li>
+                        <li>
+                            <img src="../img/index/weibo.png" alt=""/>
+                        </li>
+                        <li>
+                            <img src="../img/index/wechat.png" alt=""/>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>友情链接</li>
+                        <li>
+                            <select class="select">
+                                <option value="">友情链接</option>
+                                <option value="">百度</option>
+                                <option value="">腾讯</option>
+                                <option value="">阿里</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-3 about">
+                <ul>
+                    <li><h6>关于青奥</h6>
+                        <h6>网站地图</h6>
+                    </li>
+                    <li>
+                        <h6>版权所有：南京青奥公园</h6>
+                        <h6>备案号：粤ICPxxxx号</h6>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-3 contact">
+                <ul>
+                    <li>
+                        <h4>联系我们</h4>
+                    </li>
+                    <li><h6>电话:25252453</h6></li>
+                    <li><h6>QQ:2334636</h6></li>
+                    <li><h6>邮箱：23523433@qq.com</h6></li>
+                    <li><h6>地址：南京青奥体育公园</h6></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>

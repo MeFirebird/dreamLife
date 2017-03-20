@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:/Program Files (x86)/gradle-2.0" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.comm" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.dao" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.domain" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.service" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.sunwin.zhangdong.dao.mapper" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.web" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.web2" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.webMG" />
+            <option value="$PROJECT_DIR$/zhangdong.mybatis" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.comm" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.dao" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.domain" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.service" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.sunwin.zhangdong.dao.mapper" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.web" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.web2" />
+            <option value="$PROJECT_DIR$/sunwin.zhangdong.webMG" />
+            <option value="$PROJECT_DIR$/zhangdong.mybatis" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

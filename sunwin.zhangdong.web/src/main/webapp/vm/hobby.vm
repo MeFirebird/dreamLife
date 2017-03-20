@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兴趣爱好：活出你的精彩</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/hobby.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
+    <link rel="stylesheet" href="../css/common/reset.css"/>
+</head>
+<!-- 不忘初心！   文艺青年养成记！   暖男养成记！-->
+<body>
+#parse("/share/nav.vm")
+<div class="container-fluid" style="margin-top:52px;padding-bottom:85px;">
+    <div class="row">
+
+        #foreach($module in $modules)
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="${imgPath}$module.img" data-src="holder.js/100%x180" alt="...">
+                <h5>$module.title</h5>
+                <h6>——$module.name</h6>
+            </a>
+        </div>
+        #end
+
+
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/book.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>用书香打开你久经尘封的心灵</h5>
+                <h6>——读书</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/travel.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>人生就是一场旅行</h5>
+                <h6>——旅行</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/photography.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>捕捉瞬间，留下美好</h5>
+                <h6>——摄影</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/music.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>音乐为你的灵魂伴舞</h5>
+                <h6>——音乐</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/movie.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>一部电影，一种人生!</h5>
+                <h6>——电影</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/tv-play.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>江湖、社会、肥皂</h5>
+                <h6>——电视剧</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/comic.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>动漫伴你成长</h5>
+                <h6>——动画</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/game.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>大学里那件疯狂的小事</h5>
+                <h6>——游戏</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/bicycle.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>选择了远方，便只顾风雨兼程</h5>
+                <h6>——单车骑行</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/joke.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>逗B青年欢乐多</h5>
+                <h6>——开心段子</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/chicken-soup.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>喝完这碗，还有三碗</h5>
+                <h6>——心理鸡汤</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/guitar.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>青春最美的乐器</h5>
+                <h6>——吉他</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/piano.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>带你走向灵魂深处</h5>
+                <h6>——钢琴</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/food.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>生活的一种享受</h5>
+                <h6>——美食</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/sport.png" data-src="holder.js/100%x180" alt="...">
+                <h5>生命在于运动</h5>
+                <h6>——运动快乐</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/dream.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>追梦赤子心</h5>
+                <h6>——梦想</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/young.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>青春是用来怀念的</h5>
+                <h6>——青春不留白</h6>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="thumbnail">
+                <img src="../img/hobby/skill.jpg" data-src="holder.js/100%x180" alt="...">
+                <h5>上的了厅堂，下的了厨房</h5>
+                <h6>——生活skill</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>

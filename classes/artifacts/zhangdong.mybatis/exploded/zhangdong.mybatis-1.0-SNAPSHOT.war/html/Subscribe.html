@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>场馆预约</title>
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/subscribe.css" rel="stylesheet">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+
+<div class="container" id="subscribe" style="border:1px solid red;">
+    <div class="title">
+        <h1>场馆预约</h1>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-2 form-inline">
+                <div class="form-group">
+                    <label for="1">场馆：</label>
+                    <select id="1" class="form-control input-sm">
+                        <option>篮球馆</option>
+                        <option>羽毛球馆</option>
+                        <option>篮球馆</option>
+                        <option>篮球馆</option>
+                        <option>篮球馆</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-2 form-inline">
+                <div class="form-group">
+                    <label for="2">片区：</label>
+                    <select id="2" class="form-control input-sm">
+                        <option>东片区</option>
+                        <option>东片区</option>
+                        <option>东片区</option>
+                        <option>东片区</option>
+                        <option>东片区</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-2 form-inline">
+                <div class="form-group">
+                    <label for="3">场号：</label>
+                    <select id="3" class="form-control input-sm">
+                        <option>1号</option>
+                        <option>1号</option>
+                        <option>1号</option>
+                        <option>1号</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <hr style="border-color:red;"/>
+        <div class="row" id="style">
+            <div class="col-xs-6">
+                <span>预约方式：</span>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1">按日期预约
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 周期预约
+                </label>
+            </div>
+        </div>
+        <hr style="border-color:red;"/>
+        <div class="row">
+            <div class="col-xs-5 table-responsive">
+                <table class="table table-bordered table-condensed">
+                    <tr>
+                        <th>2016-11-14</th>
+                        <th>开放时间</th>
+                        <th>详情</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>蓝场馆</span>
+                            <span>南片区</span>
+                            <span>3号</span>
+                        </td>
+                        <td>
+                            <span>9:00--11:00</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">预约</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-5 col-xs-offset-1" id="success">
+                <h4><span></span>预约成功</h4>
+                <table class="table table-condensed">
+                  <tr>
+                      <td>篮球馆</td>
+                      <td>东片区</td>
+                      <td>2号</td>
+                      <td>时段：<span>12:00--16:00</span></td>
+                      <td>
+                          <button class="btn btn-default">取消</button>
+                      </td>
+                  </tr>
+                    <tr>
+                        <td>篮球馆</td>
+                        <td>东片区</td>
+                        <td>2号</td>
+                        <td>时段：<span>12:00--16:00</span></td>
+                        <td>
+                            <button class="btn btn-default">取消</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>篮球馆</td>
+                        <td>东片区</td>
+                        <td>2号</td>
+                        <td>时段：<span>12:00--16:00</span></td>
+                        <td>
+                            <button class="btn btn-default">取消</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="col-xs-12">
+                    <!--百度地图容器-->
+                    <div style="width:372px;height:221px;border:#ccc solid 1px;" id="dituContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+</div>
+
+
+<div class="container-fluid">
+    <!-- 通用footer，margin向上取负即可  -->
+</div>
+
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(118.714669,32.008054);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{title:"南京青奥公园",content:"我的备注",point:"118.714705|32.008326",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+#placeholder {
+    height: 50px;
+    background: #042d45;
+    opacity: 0.67;
+}
+
+#placeholder + .col-md-2 {
+    background: #042d45;
+    opacity: 0.67;
+}
+
+#placeholder + .col-md-2 .navbar-brand {
+    z-index: 9999;
+    opacity: 1;
+}
+
+.navbar-fixed-top {
+    /*border-color: #080808;*/
+}
+
+.navbar-fixed-top .navbar-brand {
+    color: #fff;
+    background-color: transparent;
+}
+
+#middle,#right {
+    opacity: 0.7;
+    background: #040404;
+}
+#middle ul.navbar-nav a,#right  ul.navbar-right a{
+    color:rgb(255,255,255) !important;
+    font-size:16px;
+    font-weight:500;
+    font-family: "Microsoft YaHei UI";
+}
+
+
+
+
+
+
+#carousel-example-generic .carousel-inner img {
+    width: 100%;
+    overflow: hidden;
+    height: 522px;
+}
+
+#subscribe, #weather, #match {
+    border-right: 4px solid white;
+
+}
+
+#subscribe {
+    background: url('../../img/index/yuyue.png') no-repeat;
+    position: relative;
+}
+
+#subscribe h2, #cooperate h2 {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Microsoft YaHei UI";
+}
+
+#subscribe h2 {
+    right: 65px;
+    top: 34px;
+    color: rgb(254, 77, 0);
+}
+
+#cooperate {
+    background: url("../../img/index/cooperate.png");
+    position: relative;
+}
+
+#cooperate h2 {
+    right: 31px;
+    top: 21px;
+    color: rgb(255, 255, 255);
+}
+
+#weather {
+    padding: 0 50px;
+}
+
+#weather div:first-child h2, h4 {
+    font-family: "Microsoft YaHei UI";
+}
+
+#weather div:first-child h2 {
+    font-size: 22px;
+    color: #333333;
+    font-weight: 500;
+}
+
+#weather div:first-child h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #6A6A6A;
+}
+
+#weather .index {
+    font-size: 12px;
+}
+
+#weather, #match {
+    background: #f5f5f5;
+}
+
+#weather .predict > ul {
+    border-bottom: 2px solid #CFCFCF;
+    text-align: center;
+    padding: 0;
+}
+
+#weather .predict ul li {
+    display: inline-block;
+    width: 32%;
+    color: #CFCFCF;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+#weather.predict > div ul {
+    border-width: 0;
+}
+
+#weather .predict > div ul li {
+
+    color: black;
+}
+
+#weather .predict ul li span {
+    line-height: 35px;
+    position: relative;
+    bottom: 5px;
+}
+
+#weather .predict > div ul div {
+    width: 30px;
+}
+
+#weather .predict .weather {
+    background: url("../../img/weather/new/中雨.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+#match {
+    padding: 0 20px;
+}
+
+#match h3 {
+    font-size: 18px;
+color(41, 41, 41, );
+    font-weight: bold;
+    font-family: "Microsoft YaHei UI";
+    position: relative;
+}
+
+#match p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgb(121, 121, 121);
+}
+
+#match .img-match {
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+}
+
+footer {
+    background: #F2F2F2;
+}
+
+footer .welcome {
+    padding-top: 51px;
+}
+
+footer .welcome img {
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+}
+
+footer .footer-title {
+    display: inline-block;
+}
+
+footer .footer-title h5 {
+    font-family: "Microsoft YaHei UI";
+}
+
+footer .footer-title h5:first-child {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(64, 64, 64);
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+footer .footer-title h5:last-child {
+    color: rgb(134, 134, 134);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+footer .social {
+    padding-top: 51px;
+}
+
+footer .social ul li {
+    display: inline-block;
+    font-size: 12px;
+    color: rgb(73, 73, 73);
+}
+
+footer .social .select {
+    padding: 2px 10px;
+}
+
+footer .about {
+    padding-top: 41px;
+    font-family: '宋体';
+}
+
+footer ul {
+    list-style: none;
+    font-size: 12px;
+}
+
+footer .about ul li:first-child h6 {
+    color: rgb(101, 101, 101);
+    font-weight: 600;
+}
+
+footer .about ul li:last-child h6 {
+    color: rgb(151, 151, 151);
+}
+
+footer .contact {
+    padding-top: 41px;
+}
+
+footer .contact li h4 {
+    font-size: 14px;
+rgb(61, 61, 61);
+    font-weight: 600;
+}
+
+footer .contact li h6 {
+    color: rgb(123, 123, 123);
+}

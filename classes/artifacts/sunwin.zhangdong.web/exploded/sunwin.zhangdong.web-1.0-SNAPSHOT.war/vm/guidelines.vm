@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>理论指导实践</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/guidelines/guidelines.css">
+</head>
+<body>
+    #parse("/share/nav.vm")
+<div class="container" style="margin-top:80px;">
+    <div class="row">
+        <div class="col-xs-12">
+            #foreach($guindeline in $guidelines)
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">$guindeline.guidelinesTitle</h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                       $guindeline.guidelinesContent
+                    </p>
+                </div>
+            </div>
+            #end
+        </div>
+    </div>
+    <nav>
+        <ul class="pagination center-block">
+            #if($pix == 1)           ## 页码
+                <li class="disabled"><span>&larr; 上一页</span></li>
+            #else
+                #set($tpix = $pix - 1)
+                <li><a href="$!R.GuideLines?pix=$tpix"><span>&larr; 上一页</span></a></li>
+            #end
+        ## 从1开始
+##            #foreach($page in $pages)
+##                #if($pix == $page.name)     ## 如果是当前页，当前页button禁用
+##                    <li class="disabled"><span>$!page.name</span></li>   ## 禁用
+##                #else
+##                    <li><a href="$!page.value">$!page.name</a></li>
+##                #end
+##            #end
+
+            #if($pix >= $count)      ## 页码大于等于总页数
+                <li class="disabled"><span>下一页  &rarr;</span></li>
+            #else
+                #set($tpix = $pix + 1)
+                <li><a href="$!R.GuideLines?pix=$tpix"><span>下一页  &rarr;</span></a></li>
+            #end
+        </ul>
+    </nav>
+</div>
+
+
+    #parse("share/js.vm")
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>

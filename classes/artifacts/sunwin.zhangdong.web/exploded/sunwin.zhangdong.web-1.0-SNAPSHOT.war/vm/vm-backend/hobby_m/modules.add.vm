@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>模块创建</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+## summernote
+    <link href="/css/summernote.css" rel="stylesheet">
+    <style>
+        #news-thumbnail{
+            margin-top:15px;
+            margin-left:80px;
+        }
+        #btn-group{
+            margin-left:80px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="$!R.moduleList">模块管理</a> <span class="divider"></span></li>
+        <li class="active">创建模块</li>
+    </ul>
+    <div class="row">
+        <form class="form-inline" id="saveFrom">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="name">模块名称:</label>
+                    <input type="text" size="100" class="form-control" name="name"  value="" id="name">
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="title">模块标题:</label>
+                    <input type="text" size="100" class="form-control" name="title" value="" id="title">
+                </div>
+            </div>
+            ## 重中之重：图片的上传哦！
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <lable for="inputEmail3">模块图片：</lable>
+                    <a id="" type="button" class="btn btn-primary" onclick="$('#ffileInput').click()"><i class="icon-file"></i> 选择</a>
+                    <input id="ffileInput" type="file" class="hide" name="imgFile">
+                    <div id="falerts"></div>
+                    <div class="" id="news-thumbnail">
+                        <img id="fimg" src="/img/backend/thumbnail.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12" id="btn-group">
+                <div class="form-group">
+                ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
+                    <button type="button" class="btn btn-success" onclick="saveMenu()"><i class=" icon-plus-sign"></i> 创建</button>
+                    <button type="reset" class="btn btn-info"><i class="icon-reply"></i> 重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<input type="text" value="$R.ajax_saveModule" id="saveUrl"/>   ##保存url
+
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/common/showImg.js"></script>
+<script src="/js/common/jquery.form.js"></script>
+<script src="/js/richtext/summernote.js"></script>
+<script src="/js/richtext/summernote-zh-CN.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+
+
+<script src="/js/guidelines/addGL.js"></script>
+<script src="/js/common/addModify.js"></script>
+
+</body>
+</html>

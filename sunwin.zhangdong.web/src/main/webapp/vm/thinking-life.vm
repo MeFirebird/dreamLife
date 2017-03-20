@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生活随想录：什么样的生活？什么样的未来？</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/thinking-life.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
+    <link rel="stylesheet" href="../css/common/reset.css"/>
+</head>
+<body>
+#parse("/share/nav.vm")
+<div class="container-fluid" style="margin-top:60px;">
+    <div class="row">
+        <!--<div class="col-xs-2">-->
+        <!--<ul class="list-group">-->
+        <!--<li class="list-group-item">日记</li>-->
+        <!--<li class="list-group-item">新闻观后感</li>-->
+        <!--<li class="list-group-item">说服自己</li>-->
+        <!--<li class="list-group-item"></li>-->
+        <!--<li class="list-group-item"></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="col-xs-10" style="border:1px solid orangered;height:700px;">-->
+        <!--瀑布流or分页-->
+        <!--</div>-->
+        <div class="col-xs-2" style="text-align:center;">
+            <!-- Nav tabs -->
+            <ul class="nav navbar-left" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#home" role="tab" data-toggle="tab">我的日记</a>
+                </li>
+                <li role="presentation">
+                    <a href="#profile" role="tab" data-toggle="tab">新闻观后感</a>
+                </li>
+                <li role="presentation">
+                    <a href="#messages" role="tab" data-toggle="tab">说服自己</a>
+                </li>
+                <!--<li role="presentation">-->
+                <!--<a href="#settings" role="tab" data-toggle="tab">Settings</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="col-xs-10">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">职场生存法则</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">职场礼仪</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">如何提高自己的职业修养</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">职场生存法则</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">职场礼仪</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">如何提高自己的职业修养</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">职场生存法则</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">职场礼仪</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">如何提高自己的职业修养</div>
+                                <div class="panel-body">
+                                    每个人都有解甲归田的时候，如果不是为了钱，谁要当这个官呢。
+                                    所以赚钱是人最主要的追求。职场上很危险的局面，就是老板用理想笼络人，
+                                    想让人不拿钱白干活。金钱是唯一衡量你价值的东西。你真的一无所求的话，
+                                    那就为赚钱而奋斗。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">职场禁忌</div>
+                                <div class="panel-body">
+                                    1、勇敢行事
+                                    　　男性在从小就被鼓励做事要勇敢果断，所以在面对事情时，
+                                    他们的潜意识总会比女性更加勇敢果断。他们参与各项比赛、运动竞赛等活动，
+                                    早己习惯竞争和输赢，很多人也了解没有永远的赢家。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">自信的人生最美丽</div>
+                                <div class="panel-body">
+                                    中国人说：“身体是革命的本钱”，的确，同样面对高强度的工作，
+                                    需要女人同男人一样具有健康的体魄。即便你不是体力工作者，
+                                    你也应该经常健身，注意饮食，少一些熬夜、酗酒等不良习惯，
+                                    以保证自己身心的健康，才有充足的精力和体力在职场上拼杀。<a href="">【查看详情】</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div role="tabpanel" class="tab-pane" id="settings">4</div>-->
+            </div>
+            <nav>
+                <ul class="pager">
+                    <li class="previous"><a href="#">&larr; 上一页</a></li>
+                    <li class="next"><a href="#">下一页 &rarr;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>

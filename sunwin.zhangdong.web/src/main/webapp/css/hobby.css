@@ -1,0 +1,24 @@
+body{
+
+}
+.navbar.navbar-inverse{
+    margin-bottom:0;
+}
+.container-fluid{
+    background-color:#B8CD68;
+    padding-top:2em;
+}
+
+.thumbnail h5{
+    text-align:center;
+    font-size:14px;
+}
+.thumbnail h5 + h6{
+   text-align:right;
+    font-size:14px;
+}
+
+img{
+    width:200px;
+    height:150px !important;
+}

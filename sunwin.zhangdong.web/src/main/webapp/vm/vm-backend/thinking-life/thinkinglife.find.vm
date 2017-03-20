@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生活随想录</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    #parse("vm-backend/backend_share/nav.vm")
+<div class="container-fluid" style="margin-top:80px;">
+    <div class="row">
+        #parse("vm-backend/backend_share/left_nav.vm")
+        <div class="col-md-10">
+            <div class="row">
+                <form class="form-inline" role="form">
+                    <div class="col-xs-12">
+                        <fieldset>
+                            <div class="form-group col-xs-3">
+                                <input type="text" class="form-control" id="title" placeholder="标题">
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <div class="input-group date form_date">
+                                    <input class="form-control" size="16" type="text" value="" readonly=""
+                                           placeholder="选择日期">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <select class="form-control" id="type">
+                                    <option>我的日记</option>
+                                    <option>新闻观后感</option>
+                                    <option>说服自己</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-info"><i class="icon-search"></i> 查询</button>
+                                <button type="reset" class="btn btn-warning"><i class="icon-share-alt"></i> 重置</button>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+            <div class="row" id="btngroup">
+                <div class="col-xs-12">
+                    <div class="btn-group">
+                    ## 为何$变量无法解析呢？
+                        <a href="$!R.AddTL" type="button" class="btn btn-primary"><i class=" icon-plus-sign"></i> 创建</a>
+                        <a onclick="toModifyGL()" type="button" class="btn btn-info"><i class=" icon-edit"></i> 编辑</a>
+                        <a onclick="toDeleteGL()" type="button" class="btn btn-danger"><i class="icon-minus-sign"></i>
+                            删除</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr style="background: rgb(245, 245, 245);">
+                            <td style="width: 30px; text-align: center;">
+                            </td>
+                            <th>#</th>
+                            <th>随想录标题</th>
+                            <th>随想录类型</th>
+                            <th>随想录内容</th>
+                            <th>创建日期</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            #foreach($domain in $domains)
+                            <tr>
+                                <td style="width: 30px; text-align: center;">
+                                    <input class="active" type="checkbox">
+                                </td>
+                                <td>$domain.id</td>
+                                <td>$domain.thinkingTitle</td>
+                                <td>$domain.thinkingType</td>
+                                <td>
+                                    #set($content = $domain.thinkingContent)
+                            #if($content && $content.length() > 30)
+                                    #set($content = $content.substring(0,30) + "...")
+                                #end
+                            $content
+                                </td>
+                                <td>$!tools.getDateTime($!domain.createTime)</td>
+                            </tr>
+                            #end
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    #parse("/share/page.vm")
+    <input type="text" id="saveUrl" value="$!R.ajax_FindTL"/>   ## 条件查询
+    <input type="text" id="editUrl" value="$!R.editTL"/>   ## 编辑页面
+    <input type="text" id="deleteUrl" value="$!R.ajax_deleteTL"/>   ## 删除记录
+    <input type="text" id="index"  value="$!domain.id"/>
+</div>
+
+<script src="/js/jquery-2.0.0.js"></script>
+<script src="/js/guidelines/modifyGL.js"></script>
+<script src="/js/guidelines/deleteGL.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 0,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+    // 不是一个页面，为什么会这样呢？ 还需要remove
+    $(".nav-sidebar").children().eq(2).addClass("active").siblings().removeClass("active");
+
+    $(function () {
+        $("button[type='submit']").click(function (e) {
+            alert('hello');
+            e.preventDefault();     // 阻止表单的提交方式
+            var id = $("#index").val();
+            var dataParam=resultDataParam();
+            console.log(dataParam);
+            $.ajax({
+                type: "POST",
+                url: $("#saveUrl").val(),
+                data: dataParam,	//传入已封装的参数
+                dataType: "json",
+                success: function (data) {
+                    alert('world');
+                    var resultList = data.resultList;
+                    var htmlcontent = getTableBody(resultList);
+                    $('#tbody').html(htmlcontent);
+                },
+                error:function(XMLHttpRequest){
+                    if(XMLHttpRequest.responseText!=''){
+                        alert(decodeURIComponent(XMLHttpRequest.responseText));
+                    }else{
+                        alert("请求服务器失败!");
+                    }
+                }
+            })
+        });
+
+        function resultDataParam() {
+            var title = $("#title").val();
+            var type = $("#type").val();
+            var dataParam = {'thinkingTitle': title, 'thinkingType': type};
+            return dataParam;
+        }
+
+
+        //组装列表数据
+        function getTableBody(resultList, startIndex) {
+            var length = resultList.length;
+            var htmlcontent = '';
+            for (var i = 0; i < length; i++) {
+                var obj = resultList[i];
+                htmlcontent += '<tr style="background: white;">';
+                htmlcontent += '<td style="width: 30px; text-align: center;"><input type="checkbox"></td>';
+                htmlcontent += '<td>' + id +'</td>';
+                htmlcontent += '<td>' + obj.thinkingTitle + '</td>';
+                htmlcontent += '<td>' + obj.thinkingType + '</td>';
+                htmlcontent += '</tr>';
+            }
+            return htmlcontent;
+        }
+    })
+</script>
+</html>

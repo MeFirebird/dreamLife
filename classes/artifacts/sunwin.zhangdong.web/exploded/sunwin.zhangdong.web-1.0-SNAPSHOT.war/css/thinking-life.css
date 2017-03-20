@@ -1,0 +1,13 @@
+
+.navbar-left {
+    border-top: 1px solid gainsboro;
+}
+
+.navbar-left li {
+    list-style: none;
+    border-bottom: 1px solid gainsboro;
+}
+
+.panel-body {
+    line-height: 25px;
+}

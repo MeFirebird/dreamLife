@@ -1,0 +1,8 @@
+
+<script>
+//    $(document).ready(function(){
+//        $("#navbar ul li").click(function(){
+//            $(this).css("color","#ffffff").siblings().css("color","#9d9d9d")
+//        })
+//    })
+</script>

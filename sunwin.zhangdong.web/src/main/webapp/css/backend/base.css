@@ -1,0 +1,51 @@
+/* 侧边导航栏  */
+ul.nav-sidebar{
+    background:#A0CDEF;
+}
+ul.nav-sidebar li a {
+    color:#000;
+}
+ul.nav-sidebar li a:hover{
+    background:#52A4EB;
+}
+
+fieldset{
+    border: gray;
+    padding:10px 0;
+    background:#A0CDEF;
+}
+#btngroup{
+    padding:10px 0;
+}
+#btngroup a{
+    margin-right:10px;
+}
+ul.nav-sidebar  li.active{
+    background:#52A6ED;
+}
+li.active > a{
+    color:white !important;
+}
+
+/* 增加 删除页面通用样式 */
+.breadcrumb{
+    background:#52A4EB;
+    margin-top:20px;
+}
+.breadcrumb a{
+    color:white;
+}
+.breadcrumb li.active{
+    color:#FF7F50;
+    cursor:not-allowed;
+}
+#saveFrom .group{
+    text-align:right;
+    padding-right:28px;
+}
+[class^="icon-"], [class*=" icon-"]{
+    vertical-align: middle;
+}
+#saveFrom .col-xs-12 {
+    margin-top: 30px;
+}

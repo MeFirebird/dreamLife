@@ -1,0 +1,50 @@
+<!-- 记录生活，分享快乐！宣传正能量！ -->
+
+
+<style>
+    a.navbar-brand.focus{
+        color: #ffffff;
+    }
+
+</style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand focus" href="$R.Index" target="_blank">记录点滴，快享生活！</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="$R.GuideLines" target="_blank">指导方针</a></li>
+                <li><a href="$R.Career" target="_blank">关于工作</a></li>
+                <li><a href="$R.ThinkingLife" target="_blank">生活随想录</a></li>
+                <li><a href="$R.Hobby" target="_blank">兴趣爱好</a></li>
+                <!--<li class="dropdown">-->
+                <!--<a href="hobby.vm" class="dropdown-toggle" data-toggle="dropdown">兴趣爱好 <span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu" role="menu">-->
+                <!--<li><a href="#">读书</a></li>-->
+                <!--<li><a href="#">旅行</a></li>-->
+                <!--<li><a href="#">摄影</a></li>-->
+                <!--<li><a href="#">音乐</a></li>-->
+                <!--<li><a href="#">电影</a></li>-->
+                <!--<li><a href="#">动漫</a></li>-->
+                <!--<li><a href="#">游戏</a></li>-->
+                <!--<li><a href="#">骑行</a></li>-->
+                <!--<li><a href="#">段子</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <li><a href="$R.FindGL" target="_blank">网站内容编辑</a></li>
+                <li style="margin-left:150px;"><a href="https://i.cnblogs.com/EditPosts.aspx?postid=6275275&update=1" target="_blank">我的技术博客</a></li>
+                <li><a href="$R.Login">登录</a></li>
+                <li><a href="$R.register">注册</a></li>
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>

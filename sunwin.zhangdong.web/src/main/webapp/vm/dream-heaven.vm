@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面朝大海，春暖花开</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/common.css">
+</head>
+
+<!--
+    一：待优化
+        1.首页的那个文字框绝对居中
+-->
+
+<body>
+<!-- 记录生活，分享快乐！宣传正能量！ -->
+#parse("/share/nav.vm")
+<div class="container-fluid" style="padding:0;">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="../img/life05.jpg" alt="..." style="height:784px;">
+                <div class="carousel-caption">
+                    最美的时候遇见你
+                </div>
+            </div>
+            <div class="item">
+                <img src="../img/life06.jpg" alt="..." style="height:784px;">
+                <div class="carousel-caption">
+                    面朝大海，春暖花开，热爱生活，满怀希望！
+                </div>
+            </div>
+            <div class="item">
+                <img src="../img/life04.jpg" alt="..." style="height:784px;">
+                <div class="carousel-caption">
+                    生活不是缺少美，而是缺少发现美的眼睛；同样生活也不是缺少善，而是缺少发现良善的心灵。
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- 中间的引导层 -->
+    <div class="guide">
+        <h3>我是炼火鸟的精神家园</h3>
+        <div class="guide-content">
+            <h4>做值得的事，爱敢爱的人！</h4>
+            <h4>没有疯狂怎叫青春？</h4>
+            <h4>爱生活，会思考！</h4>
+            <h4>不忘初心，方得始终！</h4>
+            <h4>小目标：全栈工程师</h4>
+            <h4>$!dream.dream！ 净化灵魂</h4>
+        </div>
+        <hr/>
+        <div class="guide-footer">
+            <p>
+                <!-- 自己的域名无法访问？ 这里要设置哦！-->
+                <a href="http://www.ruanyifeng.com/contact.html">Contact</a>
+                <span>|</span><span>rilegoule.cn</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+//    $(".navbar-nav li").click(function(){
+//        $(this).addClass('active');
+//    });
+</script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生活随想创建</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="$!R.FindTL">生活随想</a> <span class="divider"></span></li>
+        <li class="active">创建</li>
+    </ul>
+    <div class="row">
+        <form class="form-inline" id="saveFrom">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="" class="">生活随想录类别:</label>
+                    <select class="" name="thinkingType">
+                        <option value="我的日记">我的日记</option>
+                        <option value="新闻观后感">新闻观后感</option>
+                        <option value="说服自己">说服自己</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="inputEmail3" class="">生活随想标题:</label>
+                    <input type="text" size="140" class="form-control" name="thinkingTitle" value="" id="inputEmail3">
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="inputContent" class="">生活随想内容:</label>
+                   <textarea name="thinkingContent" id="inputContent" class="form-control" cols="130" rows="5">
+
+                    </textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 group">
+                <div class="form-group">
+                ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
+                    <button type="button" class="btn btn-success" onclick="saveMenu()">创建</button>
+                    <button type="reset" class="btn btn-info">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" style="margin-top:50px;">
+    <input type="text" id="saveUrl" value="$!R.ajax_saveTL"/>   ## ajax保存  请求的url
+    <input type="text" id="toListUrl" value="$!R.FindTL"/>      ## 此页面的请求url
+    <div class="row">
+        <div class="col-xs-12">
+             <textarea cols="160" rows="11">
+                思路：
+                 1.定义请求路径，通过spring mvc拦截，然后提供相应模板视图，解析后返回页面。
+
+                 2.输入框填充值，然后点击button，触发事件，执行ajax提交！
+                   ajax的url：一个虚拟的url，ajax的data：表单序列化后的值（表单控件的默认行为）
+
+                 3.请求参数的目的地有了，值有了，接下来将请求报文中的参数入控制器方法的形参！
+                  <h1>A:务必保证输入框的name属性和控制器方法中的形参Domain的一致！ 否则请求参数无法入参</h1>
+
+                 4.接下来就是CRUD了！  控制器调用servie，service内部调用dao，完成CRUD操作！
+            </textarea>
+        </div>
+    </div>
+</div>
+
+##<script src="/js/jquery-2.0.0.js"></script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/richtext/summernote.js"></script>
+<script src="/js/richtext/summernote-zh-CN.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        todayBtn: true,
+        autoclose: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+
+<script src="/js/guidelines/addGL.js"></script>
+<script src="/js/common/addModify.js"></script>
+
+</body>
+</html>

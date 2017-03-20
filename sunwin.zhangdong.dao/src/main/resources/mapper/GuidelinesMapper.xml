@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sunwin.zhangdong.dao.GuidelinesMapper">
+    <resultMap id="BaseResultMap" type="sunwin.zhangdong.domain.Guidelines">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="guidelines_title" property="guidelinesTitle" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="guidelines_content" property="guidelinesContent" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, guidelines_title, create_time, guidelines_content
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from guidelines
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <!-- 查询所有记录 -->
+    <select id="getDomainCollectionExtend" resultMap="BaseResultMap">
+        select guidelines.id, guidelines.guidelines_title, guidelines.create_time, guidelines.guidelines_content
+        from guidelines
+        <where>
+            <if test="domain != null">  <!-- domain 是mapper接口里的哦  -->
+                <if test="domain.guidelinesTitle != null">
+                    and guidelines.guidelines_title LIKE '%${domain.guidelinesTitle}%'
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from guidelines
+    where id = #{id}
+  </delete>
+
+    <insert id="insert" parameterType="sunwin.zhangdong.domain.Guidelines">
+    insert into guidelines (id, guidelines_title, create_time,
+      guidelines_content)
+    values (#{id,jdbcType=INTEGER}, #{guidelinesTitle,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+      #{guidelinesContent,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="sunwin.zhangdong.domain.Guidelines">
+        insert into guidelines
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="guidelinesTitle != null">
+                guidelines_title,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="guidelinesContent != null">
+                guidelines_content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="guidelinesTitle != null">
+                #{guidelinesTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="guidelinesContent != null">
+                #{guidelinesContent,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="sunwin.zhangdong.domain.Guidelines">
+        update guidelines
+        <set>
+            <if test="guidelinesTitle != null">
+                guidelines_title = #{guidelinesTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="guidelinesContent != null">
+                guidelines_content = #{guidelinesContent,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="sunwin.zhangdong.domain.Guidelines">
+    update guidelines
+    set guidelines_title = #{guidelinesTitle,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      guidelines_content = #{guidelinesContent,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

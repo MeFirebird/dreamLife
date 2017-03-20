@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tabs{
+            list-style:none;
+            margin-left:0;
+            padding:0;
+            height:1px;            /* 设置后li元素与下边就有了margin了 不然margin不起作用的哦*/
+            margin-bottom:5px;
+        }
+        #tabs li{
+            float:left;
+            border:1px solid red;
+            padding:5px 10px;
+        }
+        #tabsContent{
+            clear:left;
+            background:blueviolet;
+            color:white;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="tabs">
+    <li data-tab="users">Users</li>
+    <li data-tab="groups">Groups</li>
+</ul>
+<div id="tabsContent" >
+    <div data-tab="users">part1</div>
+    <div data-tab="groups">part2</div>
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+    // 插件调用失败？
++function ($){
+        $.fn.tabs = function (control) {      // 对象方法绑定到jQuery.fn对象上    自己为jQuery添加插件
+            var element = $(this);        // $("ul#tabs")    调用它的对象  this指的就是调用方法的对象
+            control = $(control);        // tabsContent对象     jquery对象
+            element.delegate("li", "click", function () {    // elment的子元素li
+                var tabName = $(this).attr("data-tab");     //  获取data-tab属性值
+                //点击li的时候触发change.tabs自定义事件
+                element.trigger("change.tabs", tabName);    // 当前元素出发change.tabs事件
+            });
+
+            //给element绑定一个change.tabs自定义事件         为导航设置样式效果
+            element.bind("change.tabs", function (e, tabName) {       // 选中所有li，移除active效果， 再添加
+                element.find("li").removeClass("active");
+                element.find(">[data-tab='" + tabName + "']").addClass("active");
+            });
+            element.bind("change.tabs", function (e, tabName) {      // 为内容面板设置样式
+                control.find(">[data-tab]").removeClass("active");
+                control.find(">[data-tab='" + tabName + "']").addClass("active");
+            });
+            //激活第一个选项卡
+            var firstName = element.find("li:first").attr("data-tab");   // 第一个li元素的data-tab属性值
+            element.trigger("change.tabs", firstName);
+
+            return this;             //  这是什么？
+        };
+}(jQuery);
+
+
+    $("ul#tabs").tabs("#tabsContent");
+</script>
+
+
+</body>
+</html>

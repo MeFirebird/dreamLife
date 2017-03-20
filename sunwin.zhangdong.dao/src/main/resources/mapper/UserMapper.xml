@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sunwin.zhangdong.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="sunwin.zhangdong.domain.User">
+        <id column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="last_visit" property="lastVisit" jdbcType="TIMESTAMP"/>
+        <result column="last_ip" property="lastIp" jdbcType="VARCHAR"/>
+        <result column="user_role" property="userRole"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    user_id, user_name, password, last_visit, last_ip,user_role,create_time
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from user
+        WHERE user_name = #{userName} AND password = #{password}
+    </select>
+
+    <select id="selectByUserName" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from user
+        WHERE user_name = #{userName}
+    </select>
+
+    <select id="selectAllUsers" resultMap="BaseResultMap">
+        SELECT *
+        from user
+        <where>
+            <if test="userName != null and userName !='' ">
+                user_name = #{userName}
+            </if>
+            <if test="userRole != null and userRole !='' and userRole !='请选择' ">
+                AND user_role = #{userRole}
+            </if>
+        </where>
+    </select>
+    <select id="selectMaxId" resultType="INTEGER">
+        select max(user_id) from user;
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="sunwin.zhangdong.domain.User">
+    insert into user (user_id, user_name, password,
+      last_visit, last_ip,user_role,create_time)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{lastVisit,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}, #{userRole,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="sunwin.zhangdong.domain.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="lastVisit != null">
+                last_visit,
+            </if>
+            <if test="lastIp != null">
+                last_ip,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="lastVisit != null">
+                #{lastVisit,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastIp != null">
+                #{lastIp,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="sunwin.zhangdong.domain.User">
+        update user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="lastVisit != null">
+                last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastIp != null">
+                last_ip = #{lastIp,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="sunwin.zhangdong.domain.User">
+    update user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      last_visit = #{lastVisit,jdbcType=TIMESTAMP},
+      last_ip = #{lastIp,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

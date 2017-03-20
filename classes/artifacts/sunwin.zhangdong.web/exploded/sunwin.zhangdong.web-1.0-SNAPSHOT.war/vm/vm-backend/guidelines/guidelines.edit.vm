@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编辑方针编辑</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+## summernote
+    <link href="/css/summernote.css" rel="stylesheet">
+    <style>
+        .col-xs-12{
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="$!R.FindGL">指导方针</a> <span class="divider"></span></li>
+        <li class="active">编辑</li>
+    </ul>
+    <div class="row">
+        <form class="form-inline" id="saveFrom">
+            <input type="hidden" name="id" value="$guidelines.id"/>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="inputEmail3" class="">指导方针标题:</label>
+                    <input type="text"  size="140" class="form-control" name="guidelinesTitle" value="$guidelines.guidelinesTitle" id="inputEmail3">
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="inputContent" class="">指导方针内容:</label>
+                    <textarea name="guidelinesContent" id="inputContent" class="form-control" cols="130" rows="5">
+                            $!guidelines.guidelinesContent
+                    </textarea>
+                </div>
+            </div>
+
+##            <div class="form-group">
+##                <label class="" for="date">创建时间：</label>
+##                <div class="input-append date form_datetime" style="display:inline-block">
+##                    <input type="text" id="date" class="form-control" value="" readonly
+##                           placeholder="创建时间" name="createTime">
+##                    <span class="add-on"><i class="icon-th"></i></span>
+##                </div>
+##            </div>
+            <div class="col-xs-12 group">
+                <div class="form-group">
+                ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
+                    <a type="button" class="btn btn-success" onclick="saveMenu()"><i class=" icon-save"></i> 保存</a>
+                    <a type="reset" class="btn btn-info"><i class="icon-reply"></i> 重置</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" style="margin-top:50px;">
+    <div class="row" style="text-align:center;">
+        <div class="col-xs-12">
+            <input type="text" id="saveUrl" value="$!R.ajax_editGL"/>
+            <input type="text" id="toListUrl" value="$!R.FindGL"/>
+             <textarea cols="130" rows="14">
+                思路：
+                 1.选中一条记录，点击编辑，js获取此记录的id，然后页面进行跳转（请求）！
+
+                 2.spring mvc拦截请求，并获取记录的id！ 根据id查询出此记录的信息，可以进行页面的数据绑定。
+
+                 3.然后流程就和创建的一样了！
+                   创建是：无中生有；  编辑是：先找到，再编辑。
+                   注意domain和界面上的表单字段值的对应（name属性一定要对应好哦）
+
+                 4.感想：表单收集数据或客户端收集数据 ——》 发送请求 ——》 拦截请求  ——》 请求报文参数入参！(重点理解)——》控制器内部
+                                调用service，service内部调用dao，
+                   最终完成对domain所对应的表数据的CRUD！
+            </textarea>
+        </div>
+    </div>
+</div>
+
+##<script src="/js/jquery-2.0.0.js"></script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/richtext/summernote.js"></script>
+<script src="/js/richtext/summernote-zh-CN.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        todayBtn: true,
+        autoclose: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+
+<script src="/js/guidelines/addGL.js"></script>
+<script src="/js/common/addModify.js"></script>
+
+</body>
+</html>

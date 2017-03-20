@@ -1,0 +1,12 @@
+rootProject.name = 'life'
+include 'sunwin.zhangdong.domain'
+include 'sunwin.zhangdong.sunwin.zhangdong.dao.mapper'
+include 'sunwin.zhangdong.service'
+include 'sunwin.zhangdong.comm'
+include 'sunwin.zhangdong.web'
+include 'sunwin.zhangdong.web2'
+include 'zhangdong.mybatis'
+include 'sunwin.zhangdong.dao'
+include 'sunwin.zhangdong.dao'
+include 'sunwin.zhangdong.webMG'
+

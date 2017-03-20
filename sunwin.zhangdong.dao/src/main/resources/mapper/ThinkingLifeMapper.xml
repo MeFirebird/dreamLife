@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sunwin.zhangdong.dao.ThinkingLifeMapper" >
+  <resultMap id="BaseResultMap" type="sunwin.zhangdong.domain.ThinkingLife" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="thinking_title" property="thinkingTitle" jdbcType="VARCHAR" />
+    <result column="thinking_content" property="thinkingContent" jdbcType="VARCHAR" />
+    <result column="thinking_type" property="thinkingType" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, thinking_title, thinking_content, thinking_type, create_time
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from thinking_life
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="getDomainCollectionExtend" resultMap="BaseResultMap">
+    select * from thinking_life
+    <where>
+      <if test="domain != null">  <!-- domain 是mapper接口里的哦  -->
+        <if test="domain.thinkingTitle != null">
+          and thinking_life.thinking_title LIKE '%${domain.thinkingTitle}%'
+        </if>
+        <if test="domain.thinkingType != null">
+          and thinking_life.thinking_type = #{domain.thinkingType}
+        </if>
+      </if>
+    </where>
+  </select>
+
+  <!--获取Domain总数-->
+  <select id="getCount" resultType="int">
+    SELECT COUNT(id)
+    FROM thinking_life
+  </select>
+  
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from thinking_life
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="sunwin.zhangdong.domain.ThinkingLife" >
+    insert into thinking_life (id, thinking_title, thinking_content, 
+      thinking_type, create_time)
+    values (#{id,jdbcType=INTEGER}, #{thinkingTitle,jdbcType=VARCHAR}, #{thinkingContent,jdbcType=VARCHAR}, 
+      #{thinkingType,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="insertSelective" parameterType="sunwin.zhangdong.domain.ThinkingLife" >
+    insert into thinking_life
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="thinkingTitle != null" >
+        thinking_title,
+      </if>
+      <if test="thinkingContent != null" >
+        thinking_content,
+      </if>
+      <if test="thinkingType != null" >
+        thinking_type,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="thinkingTitle != null" >
+        #{thinkingTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="thinkingContent != null" >
+        #{thinkingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="thinkingType != null" >
+        #{thinkingType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="sunwin.zhangdong.domain.ThinkingLife" >
+    update thinking_life
+    <set >
+      <if test="thinkingTitle != null" >
+        thinking_title = #{thinkingTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="thinkingContent != null" >
+        thinking_content = #{thinkingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="thinkingType != null" >
+        thinking_type = #{thinkingType,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="sunwin.zhangdong.domain.ThinkingLife" >
+    update thinking_life
+    set thinking_title = #{thinkingTitle,jdbcType=VARCHAR},
+      thinking_content = #{thinkingContent,jdbcType=VARCHAR},
+      thinking_type = #{thinkingType,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

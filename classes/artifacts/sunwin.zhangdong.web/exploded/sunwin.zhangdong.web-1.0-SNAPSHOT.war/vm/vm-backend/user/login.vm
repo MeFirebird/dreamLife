@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台登录界面</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../../css/user/login.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
+    <link rel="stylesheet" href="../css/common/reset.css"/>
+</head>
+<body>
+    #parse("/share/nav.vm")    ##  /vm/share/nav.vm这个路径为何不对呢？
+
+<div class="container" style="margin-top:120px;">
+##    <input type="text" value="$R.LoginCheck"/>
+    <div style="color:red;margin-top:10px;text-align:center;">$!message</div>
+    <form class="form-signin" role="form" action="$R.LoginCheck" method="post">
+        <h1 style="font-size:2.4em;margin-bottom:15px;">必须改变</h1>
+        <input type="text" name="userName" class="form-control" placeholder="用户名" required="" autofocus="">
+        <input type="password" name="password" class="form-control" placeholder="密码" required="">
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div style="color:red;margin-top:10px;text-align:center;">$!error</div>
+    </form>
+
+</div>
+</body>
+</html>

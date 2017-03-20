@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台指导方针</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/reset.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+##    <link href="/css/menu/menu.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    #parse("vm-backend/backend_share/nav.vm")
+<div class="container-fluid" style="margin-top:80px;">
+    <div class="row">
+        #parse("vm-backend/backend_share/left_nav.vm")
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form class="form-inline" role="form">
+                        <fieldset>
+                            <div class="form-group col-xs-3">
+                                <input type="text" name="guidelinesTitle" class="form-control" id="exampleInputEmail2" placeholder="指导方针标题">
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <div class="input-group date form_date">
+                                    <input class="form-control" size="16" type="text" value="" readonly=""
+                                           placeholder="选择日期">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <select class="form-control">
+                                    <option value="">最 近 一 周</option>
+                                    <option value="">最 近 一 月</option>
+                                    <option value="">最 近 一 年</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <button  class="btn btn-info"><i class="icon-search"></i> 查询</button>
+                                <button type="reset" class="btn btn-warning"><i class="icon-share-alt"></i> 重置</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="row" id="btngroup">
+                <div class="col-xs-12">
+                    <div class="btn-group">
+                    ## 为何$变量无法解析呢？
+                        <a href="$!R.AddGL" type="button" class="btn btn-primary"><i class=" icon-plus-sign"></i> 创建</a>
+                        <a onclick="toModifyGL()" type="button" class="btn btn-info"><i class=" icon-edit"></i> 编辑</a>
+                        <a onclick="toDeleteGL()" type="button" class="btn btn-danger"><i class="icon-minus-sign"></i>
+                            删除</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-bordered">
+                        <tr style="background: rgb(245, 245, 245);">
+                            <td style="width: 30px; text-align: center;">
+                            </td>
+                            <th>#</th>
+                            <th>指导方针标题</th>
+                            <th>指导方针内容</th>
+                            <th>创建日期</th>
+                        </tr>
+                        #foreach($domain in $domains)
+                            <tr>
+                                <td style="width: 30px; text-align: center;">
+                                    <input class="active" type="checkbox">
+                                </td>
+                                <td>$domain.id</td>
+                                <td>$domain.guidelinesTitle</td>
+                                <td>
+                                    #set($content = $domain.guidelinesContent)
+                                         #if($content && $content.length() > 30)
+                                         #set($content = $content.substring(0,30) + "...")
+                                    #end
+                                            $content
+                                </td>
+                                <td>$!tools.getDateTime($!domain.createTime)</td>
+                            </tr>
+                        #end
+                    </table>
+                </div>
+            </div>
+            #parse("/share/page.vm")
+        </div>
+    </div>
+
+    <input type="hidden" id="saveUrl" value="$!R.ajax_saveGL"/>   ## 创建
+    <input type="hidden" id="editUrl" value="$!R.EditGL"/>   ## 编辑页面
+    <input type="hidden" id="deleteUrl" value="$!R.ajax_deleteGL"/>
+</div>
+
+<script src="/js/jquery-2.0.0.js"></script>
+<script src="/js/guidelines/modifyGL.js"></script>
+<script src="/js/guidelines/deleteGL.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $('.form_date').datetimepicker({
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 0,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+
+    // 激活侧边栏
+    $(function () {
+        $(".nav-sidebar").children().eq(0).addClass("active");
+    })
+</script>
+</html>
