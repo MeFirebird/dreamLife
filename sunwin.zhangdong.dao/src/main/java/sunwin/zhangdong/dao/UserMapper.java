@@ -1,9 +1,11 @@
 package sunwin.zhangdong.dao;
 
+import org.springframework.stereotype.Repository;
 import sunwin.zhangdong.domain.User;
 
 import java.util.List;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
 

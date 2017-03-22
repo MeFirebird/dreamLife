@@ -29,6 +29,7 @@ public class HobbyController {
        ModelAndView mav = new ModelAndView();
         List<Module>  modules =  moduleService.getAllModules();
         mav.addObject("modules",modules);
+        mav.setViewName("hobby");
         return mav;
     }
 

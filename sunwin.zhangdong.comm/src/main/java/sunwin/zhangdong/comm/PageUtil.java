@@ -20,7 +20,7 @@ public class PageUtil {
      * @return
      */
     public List<PageEntity> getPageData(YogmsPage yogmsPage,String url,String type){
-        List<PageEntity> pageList=new ArrayList<>();  // 集合泛型哦
+        List<PageEntity> pageList=new ArrayList<PageEntity>();  // 集合泛型哦
         long pageCount=yogmsPage.getTotalPage();   // 总页数
         int current=yogmsPage.getCurrent();        // 当前页码       注意这里哦！
         int num=(current-1)/10;

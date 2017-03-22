@@ -47,7 +47,7 @@ function saveData(url, formName, toListUrl) {
  * @param type 类型 1：添加 2：修改
  * @param toListUrl 修改后跳转的url
  */
-function savePhotoData(url, formName, param, toListUrl) {
+function savePhotoData(url, formName, param,type,toListUrl) {
 
     $("#" + formName).ajaxSubmit({
         type: 'post',
@@ -58,8 +58,13 @@ function savePhotoData(url, formName, param, toListUrl) {
             console.log(data);
             console.log(data.URL);
             //if (data.URL != undefined) {
-            alert("添加成功!");
+            if(type == 1){
+                alert("添加成功!");
+            }else{
+                alert("修改成功！");
+            }
             $("#" + formName).resetForm();
+            window.location.href =  "/" + toListUrl;
         },
         error: function (XMLHttpRequest) {
             if (XMLHttpRequest.responseText != '') {

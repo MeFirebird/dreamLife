@@ -1,8 +1,11 @@
 package sunwin.zhangdong.comm;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Administrator on 2016/12/12.
  */
+@Component
 public class LoginCommand {
 
     private  String userName;

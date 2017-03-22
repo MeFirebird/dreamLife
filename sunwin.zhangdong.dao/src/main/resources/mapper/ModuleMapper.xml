@@ -42,6 +42,9 @@
             <if test="img != null">
                 img,
             </if>
+            <if test="createTime != null">
+                create_time
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -56,8 +59,26 @@
             <if test="img != null">
                 #{img,jdbcType=VARCHAR},
             </if>
+            <if test="createTime != null">
+                #{createTime}
+            </if>
         </trim>
     </insert>
+    <update id="updateModules" parameterType="sunwin.zhangdong.domain.Module">
+        update modules
+        <set >
+            <if test="name != null" >
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null" >
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="img != null" >
+                img = #{img,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 
     <delete id="deleteModules" parameterType="Integer">
         DELETE FROM modules where id IN

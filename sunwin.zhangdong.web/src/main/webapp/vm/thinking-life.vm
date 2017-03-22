@@ -5,12 +5,12 @@
     <title>生活随想录：什么样的生活？什么样的未来？</title>
     <link rel="stylesheet" href="../css/bootstrap.css"/>
     <link rel="stylesheet" href="../css/thinking-life.css"/>
-    <link rel="stylesheet" href="../css/common/common.css"/>
     <link rel="stylesheet" href="../css/common/reset.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
 </head>
 <body>
 #parse("/share/nav.vm")
-<div class="container-fluid" style="margin-top:60px;">
+<div class="container" style="margin-top:60px;">
     <div class="row">
         <!--<div class="col-xs-2">-->
         <!--<ul class="list-group">-->
@@ -365,6 +365,12 @@
     </div>
 </div>
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#navbar li:eq(2) a").css('color','#FFA549');
+    })
+
+</script>
 <script src="../js/bootstrap.js"></script>
 </body>
 </html>

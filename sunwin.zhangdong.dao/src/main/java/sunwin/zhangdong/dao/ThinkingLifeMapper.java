@@ -1,11 +1,14 @@
 package sunwin.zhangdong.dao;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 import sunwin.zhangdong.domain.ThinkingLife;
 
 import java.util.Date;
 import java.util.List;
 
+
+@Repository
 public interface ThinkingLifeMapper {
 
     // 插入

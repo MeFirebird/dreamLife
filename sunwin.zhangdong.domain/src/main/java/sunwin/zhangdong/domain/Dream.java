@@ -1,5 +1,9 @@
 package sunwin.zhangdong.domain;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Dream {
     private Integer id;    // 包装类型
 

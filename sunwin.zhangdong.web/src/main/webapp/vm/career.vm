@@ -5,13 +5,13 @@
     <title>关于工作：追求兴趣和事业的一致</title>
     <link rel="stylesheet" href="../css/bootstrap.css"/>
     <link rel="stylesheet" href="../css/career.css"/>
-    <link rel="stylesheet" href="../css/common/common.css"/>
     <link rel="stylesheet" href="../css/common/reset.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
 </head>
 <body>
 #parse("/share/nav.vm")
 <!-- 侧边导航条吧 -->
-<div class="container-fluid" style="margin-top:60px;">
+<div class="container" style="margin-top:60px;">
     <div class="row">
         <div class="col-xs-2" style="text-align:center;">
             <!-- Nav tabs -->
@@ -27,6 +27,9 @@
                 </li>
                 <li role="presentation">
                     <a href="#messages" role="tab" data-toggle="tab">SE修炼之道</a>
+                </li>
+                <li role="presentation">
+                    <a href="#messages" role="tab" data-toggle="tab">技术硬实力</a>
                 </li>
             </ul>
         </div>
@@ -358,6 +361,9 @@
 
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script>
+  $(function(){
+      $("#navbar li:eq(1) a").css('color','#FFA549');
+  })
 
 </script>
 <script src="../js/bootstrap.js"></script>

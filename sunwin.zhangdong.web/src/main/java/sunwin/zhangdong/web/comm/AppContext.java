@@ -1,6 +1,7 @@
 package sunwin.zhangdong.web.comm;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import sunwin.zhangdong.domain.User;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by Administrator on 2017/1/12.
  */
+
+@Component
 public class AppContext {
 
     private static Logger log = Logger.getLogger(AppContext.class);

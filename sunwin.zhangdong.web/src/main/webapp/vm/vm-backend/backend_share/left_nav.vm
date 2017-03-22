@@ -6,8 +6,9 @@
         <li><a href="$R.FindTL"><i class="icon-bolt" style="padding:0 3px;"></i>生活随想录</a></li>
         <li><a href="$R.moduleList"><i class="icon-heart" style="padding:0 3px;"></i>兴趣爱好</a></li>
         <li><a href="$R.UserList"><i class=" icon-user-md" style="padding:0 3px;"></i>用户管理</a></li>
+        <li><a href="$R.memoList"><i class=" icon-user-md" style="padding:0 3px;"></i>备忘录管理</a></li>
 
-        <li><a href="">占位菜单</a></li>
+
         <li><a href="">占位菜单</a></li>
         <li><a href="">占位菜单</a></li>
         <li><a href="$!R.devProcess"><i class="icon-heart" style="padding:0 3px;"></i>心路历程</a></li>

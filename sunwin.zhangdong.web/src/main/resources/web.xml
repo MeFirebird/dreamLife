@@ -95,7 +95,7 @@
         <location>/403.html</location>
     </error-page>
     <!--<welcome-file-list>-->
-        <!--<welcome-file>dream-heaven.vm</welcome-file>  &lt;!&ndash; 这里起作用了&ndash;&gt;-->
+    <!--<welcome-file>dream-heaven.vm</welcome-file>  &lt;!&ndash; 这里起作用了&ndash;&gt;-->
     <!--</welcome-file-list>-->
     <session-config>
         <session-timeout>90</session-timeout>

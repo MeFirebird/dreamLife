@@ -1,4 +1,6 @@
 package sunwin.zhangdong.comm;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
 /**
@@ -7,6 +9,7 @@ import java.util.HashMap;
  *                              就算提供了静态方法，但类默认有无参数构造器哦！ 可以直接new
  * Created by wangjs on 2016/5/11.
  */
+@Component
 public class ResponseResult extends HashMap<String, Object> {
 
     // 相当于java类的身份证。主要用于版本控制。

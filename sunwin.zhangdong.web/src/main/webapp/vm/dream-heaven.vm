@@ -37,7 +37,7 @@
             <div class="item">
                 <img src="../img/life06.jpg" alt="..." style="height:784px;">
                 <div class="carousel-caption">
-                    面朝大海，春暖花开，热爱生活，满怀希望！
+                    面朝大海，春暖花开，热爱生活，满怀希望， 永远相信美好的事物即将发生！
                 </div>
             </div>
             <div class="item">
@@ -79,7 +79,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script>

@@ -1,5 +1,5 @@
 
-function saveMenu(){
+function saveMenu(type){
 
     var name = $("#name").val();   // 获取模块名称
     var title = $("#title").val(); // 获取模块标题
@@ -16,5 +16,5 @@ function saveMenu(){
         return false;
     }
     var param = {'imgbase64':imgbase64};
-    savePhotoData(url,"saveFrom",param,$('#toListUrl').val());
+    savePhotoData(url,"saveFrom",param,type,$('#toListUrl').val());
 }

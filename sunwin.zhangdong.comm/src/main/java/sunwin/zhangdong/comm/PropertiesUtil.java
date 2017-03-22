@@ -1,11 +1,13 @@
 package sunwin.zhangdong.comm;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+@Component
 public class PropertiesUtil {
 
 	private static Properties prop;

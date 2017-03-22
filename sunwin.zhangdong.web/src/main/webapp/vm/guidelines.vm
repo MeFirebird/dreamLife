@@ -5,6 +5,8 @@
     <title>理论指导实践</title>
     <link rel="stylesheet" href="../css/bootstrap.css"/>
     <link rel="stylesheet" href="/css/guidelines/guidelines.css">
+    <link rel="stylesheet" href="../css/common/reset.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
 </head>
 <body>
     #parse("/share/nav.vm")
@@ -52,9 +54,14 @@
     </nav>
 </div>
 
-
     #parse("share/js.vm")
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="../js/bootstrap.js"></script>
+<script>
+    $(function(){
+        $("#navbar li:eq(0) a").css('color','#FFA549');
+    })
+
+</script>
 </body>
 </html>

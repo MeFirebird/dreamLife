@@ -38,8 +38,13 @@ public class ModuleService {
      * @return
      */
     public int saveModule(Module module){
-        int maxId = moduleMapper.getMaxId();
-        module.setId(maxId + 1);
+        Integer maxId = moduleMapper.getMaxId();
+        if(maxId  != null){
+            module.setId(maxId + 1);
+        }else{
+            maxId = 1;
+        }
+
         return moduleMapper.insert(module);   //  这里用insert  不用insertSelective
     }
 
@@ -50,7 +55,7 @@ public class ModuleService {
      * @return
      */
     public int modifyModule(Module module){
-        return moduleMapper.insertSelective(module);
+        return moduleMapper.updateModules(module);
     }
 
     /**  查询所有的模块
@@ -74,12 +79,12 @@ public class ModuleService {
     public synchronized void deleteModule(HttpServletRequest request, Integer[] ids) throws Exception{
         //将相关的图片删除
         int length=ids.length;
-        String root=request.getServletContext().getRealPath("/");
+        String root= "C:\\Users\\Administrator\\Desktop\\life\\sunwin.zhangdong.web\\src\\main\\webapp\\photo\\";
         for(int i=0;i<length;i++){
             String photoUrl=moduleMapper.getOneDomain(ids[i]).getImg();
             //如果图片存在将其删除
             if(StringUtil.isNotEmpty(photoUrl)){        // 这里要注意路径的一致性问题：上传和删除
-                FileHelper.delFile(root+"/"+photoUrl);
+                FileHelper.delFile(root+photoUrl);
             }
         }
         moduleMapper.deleteModules(ids);

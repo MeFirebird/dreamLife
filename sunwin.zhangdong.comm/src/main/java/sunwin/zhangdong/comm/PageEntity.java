@@ -1,8 +1,11 @@
 package sunwin.zhangdong.comm;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by wangjs on 2016/11/30.
  */
+@Component
 public class PageEntity {
     //分页地址
     private String pageUrl;

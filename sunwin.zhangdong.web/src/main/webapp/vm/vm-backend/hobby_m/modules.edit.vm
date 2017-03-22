@@ -28,17 +28,18 @@
     <div class="row">
         <form class="form-inline" id="saveFrom">
             <input type="hidden" name="id" value="$module.id"/>
+            <input type="hidden" name="createTime" value="$module.createTime"/>
 
             <div class="col-xs-12">
                 <div class="form-group">
                     <label for="" class="">模块名称:</label>
-                    <input type="text" size="100" class="form-control" name="" value="$module.name" id="inputEmail3">
+                    <input type="text" size="100" class="form-control" name="name" value="$module.name" id="inputEmail3">
                 </div>
             </div>
             <div class="col-xs-12">
                 <div class="form-group">
                     <label for="" class="">模块标题:</label>
-                    <input name="" id="inputContent" class="form-control" value=" $!module.title" size="100"/>
+                    <input name="title" id="inputContent" class="form-control" value=" $!module.title" size="100"/>
                 </div>
             </div>
         ## 重中之重：图片的上传哦！
@@ -49,14 +50,14 @@
                     <input id="ffileInput" type="file" class="hide" name="imgFile">
                     <div id="falerts"></div>
                     <div class="" id="news-thumbnail">
-                        <img id="fimg" src="/img/backend/thumbnail.png" alt="">
+                        <img id="fimg" src="${imgPath}$module.img" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 group">
                 <div class="form-group">
                 ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
-                    <a type="button" class="btn btn-success" onclick="saveMenu()"><i class=" icon-save"></i> 保存</a>
+                    <a type="button" class="btn btn-success" onclick="saveMenu(2)"><i class=" icon-save"></i> 保存</a>
                     <a type="reset" class="btn btn-info"><i class="icon-reply"></i> 重置</a>
                 </div>
             </div>
@@ -89,7 +90,7 @@
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/bootstrap.js"></script>
 <script src="/js/common/showImg.js"></script>
-<script src="/js/common/jquery.form.js"></script>   ## 这个没用引用哦 
+<script src="/js/common/jquery.form.js"></script>   ## 这个没用引用哦
 <script src="/js/richtext/summernote.js"></script>
 <script src="/js/richtext/summernote-zh-CN.js"></script>
 <script src="/js/bootstrap-datetimepicker.js"></script>

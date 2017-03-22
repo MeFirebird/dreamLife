@@ -40,7 +40,8 @@
                 <!--<li><a href="#">段子</a></li>-->
                 <!--</ul>-->
                 <!--</li>-->
-                <li><a href="$R.FindGL" target="_blank">网站内容编辑</a></li>
+                <li><a href="$R.Memo" target="_blank">备忘录</a></li>
+##  此入口屏蔽掉哦              <li><a href="$R.FindGL" target="_blank">网站内容编辑</a></li>
                 <li style="margin-left:150px;"><a href="https://i.cnblogs.com/EditPosts.aspx?postid=6275275&update=1" target="_blank">我的技术博客</a></li>
                 <li><a href="$R.Login">登录</a></li>
                 <li><a href="$R.register">注册</a></li>
@@ -48,3 +49,4 @@
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
+

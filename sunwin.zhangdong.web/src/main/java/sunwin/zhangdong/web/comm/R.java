@@ -15,6 +15,8 @@ public class R {
     public static final String GuideLines = "guidelines.html";
     public static final String Hobby = "hobby.html";
     public static final String ThinkingLife = "thinking-life.html";
+    public static final String Memo = "memo.html";
+
 
     public static String getIndex(){
         return Index;
@@ -30,6 +32,9 @@ public class R {
     }
     public static String getThinkingLife() {
         return ThinkingLife;
+    }
+    public static String getMemo() {
+        return Memo;
     }
 
 
@@ -68,6 +73,13 @@ public class R {
     public static final String moduleEdit = "module.edit.html";   //模块编辑页
     public static final String ajax_saveModule = "Ajax.save.module.json";  // 保存模块
     public static final String ajax_deleteModule = "Ajax.delete.module.json";//删除模块
+
+
+    // 备忘录管理
+    public static final String memoList = "memo.list.html";  //备忘录列表页
+    public static final String memoAdd = "memo.add.html";   //备忘录创建页
+
+
 
 
     // 生活随想录
@@ -175,6 +187,15 @@ public class R {
     public static String getAjax_editTL_() {
         return ajax_editTL;
     }
+
+    //备忘录管理
+    public static String getMemoAdd() {
+        return memoAdd;
+    }
+    public static String getMemoList() {
+        return memoList;
+    }
+
 
     // 心路历程
     public static String getDevProcess() {
