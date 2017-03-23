@@ -1,0 +1,23 @@
+
+
+.navbar-left {
+    border-top: 1px solid gainsboro;
+}
+
+.navbar-left li {
+    list-style: none;
+    border-bottom: 1px solid gainsboro;
+}
+
+div[role="tabpanel"]  .row{
+    margin-top:1.6em;
+}
+
+.panel-heading{
+    text-align:center;
+}
+.panel-body{
+    min-height:8em;
+    text-align:justify;
+}
+

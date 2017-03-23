@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>备忘录管理</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/css/common/reset.css" rel="stylesheet"/>
+    <link href="/css/common/common.css" rel="stylesheet"/>
+    <link href="/css/backend/base.css" rel="stylesheet"/>
+</head>
+<body>
+    #parse("vm-backend/backend_share/nav.vm")
+<div class="container-fluid" style="margin-top:80px;">
+    <div class="row">
+        #parse("vm-backend/backend_share/left_nav.vm")
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form class="form-inline" role="form" action="">
+                        <fieldset>
+                            <div class="form-group col-xs-3">
+                                <label>模块类别：</label>
+                                <select class="form-control" name="userRole">
+                                ## 注意第一个option 这个value可以不写的，写了后台的动态sql就要做判断的哦！
+                                    <option value="">请选择</option>
+                                    <option value="超级管理员">音乐</option>
+                                    <option value="普通用户">电影</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <button class="btn btn-info"><i class="icon-search"></i> 查询</button>
+                                <button type="reset" class="btn btn-warning"><i class="icon-share-alt"></i> 重置</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <div class="col-xs-12">
+                    <div class="btn-group" id="btngroup">
+                    ## 为何$变量无法解析呢？
+                        <a href="$!R.moduleAdd" type="button" class="btn btn-primary"><i class=" icon-plus-sign"></i> 创建</a>
+                        <a onclick="toModifyGL()" type="button" class="btn btn-info"><i class=" icon-edit"></i> 编辑</a>
+                        <a onclick="toDeleteGL()" type="button" class="btn btn-danger"><i class="icon-minus-sign"></i>
+                            删除</a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <table class="table table-bordered">
+                        <tr style="background: rgb(245, 245, 245);">
+                            <td style="width: 30px; text-align: center;">#
+                            </td>
+                            <th>id</th>
+                            <th>模块名称</th>
+                            <th>模块标题</th>
+                            <th>此模块的创建时间</th>
+                        </tr>
+                        #foreach($!module in $!modules)
+                            <tr>
+                                <td style="width: 30px; text-align: center;">
+                                    <input class="active" type="checkbox">
+                                </td>
+                                <td>$module.id</td>
+                                <td>$module.name</td>
+                                <td>$!module.title</td>
+                            ## 这里为什么就不行呢？   先注释掉吧！
+                            ##                                #if(${module.createTime} != null)
+                                <td>$tools.getDateTime(${module.createTime})</td>
+                            ##                                #end
+                            ##                                <td>$!{module.createTime}</td>
+                            </tr>
+                        #end
+                    </table>
+                </div>
+            </div>
+            #parse("/share/page.vm")
+        </div>
+    </div>
+
+    <input type="hidden" id="saveUrl" value=""/>   ## 创建
+    <input type="hidden" id="editUrl" value="$R.moduleEdit"/>   ## 编辑页面
+    <input type="hidden" id="deleteUrl" value="$R.ajax_deleteModule"/>  ## 删除页面
+</div>
+
+<script src="/js/jquery-2.0.0.js"></script>
+<script src="/js/guidelines/modifyGL.js"></script>
+<script src="/js/guidelines/deleteGL.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script>
+    // 激活侧边栏
+    $(function () {
+        $(".nav-sidebar").children().eq(3).addClass("active");
+    })
+</script>
+</html>
