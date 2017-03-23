@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>面朝大海，春暖花开</title>
     <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/memo.css"/>
     <link rel="stylesheet" href="../css/common/reset.css">
     <link rel="stylesheet" href="../css/common/common.css">
@@ -15,345 +16,69 @@
         <div class="col-xs-2" style="text-align:center;">
             <!-- Nav tabs -->
             <ul class="nav navbar-left" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#toDoGoal" role="tab" data-toggle="tab">待做的小目标</a>
+                <li role="presentation" onclick="href(1)">
+                    <a href="" data-toggle="tab">周目标</a>    ## 不添加data-toggle="tab"这个就不行哦
                 </li>
-                <li role="presentation">
-                    <a href="#yearGoal" role="tab" data-toggle="tab">年度目标</a>
+                <li role="presentation" onclick="href(2)">
+                    <a href="" data-toggle="tab">月目标</a>
                 </li>
-                <li role="presentation">
-                    <a href="#monthGoal" role="tab" data-toggle="tab">月度目标</a>
+                <li role="presentation" onclick="href(3)">
+                    <a href="" data-toggle="tab">年目标</a>
                 </li>
-                <li role="presentation">
-                    <a href="#weekGoal" role="tab" data-toggle="tab">周度目标</a>
+                <li role="presentation" class="active" onclick="href(4)">
+                    <a href="" data-toggle="tab">待分配目标</a>
                 </li>
             </ul>
         </div>
         <div class="col-xs-10">
             <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="toDoGoal">
+            <div class="">
+                <div role="" class="tab-pane active" id="">
                     <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                      不能再墨迹了哦！ 你到底要做什么？
+                        #foreach($danger in $dangers)
+                            <div class="col-xs-4">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        $danger.title
+                                        <span class="label label-danger">$danger.level</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        $danger.content
+                                    </div>
+                                    <div class="panel-footer">
+                                        <span>创建时间：$tools.getDateTime(${danger.createTime})</span>
+                                        #if($danger.finishTime)
+                                            <span style="float:right;">完成时间：$tools.getDateTime(${danger.finishTime})</span>
+                                        #else
+                                            <button type="button"><span class="icon-warning-sign"></span>待完成</button>
+                                        #end
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                   不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
+                        #end
                     </div>
                     <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                   不断的学习，才能保证自己不被淘汰哦！
+                        #foreach($memo in $memos)
+                            <div class="col-xs-4">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        $memo.title
+                                        <span class="label label-info">$memo.level</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        $memo.content
+                                    </div>
+                                    <div class="panel-footer">
+                                        <span>创建时间：$tools.getDateTime(${memo.createTime})</span>
+                                        #if($memo.finishTime)
+                                            <span style="float:right;">完成时间：$tools.getDateTime(${memo.finishTime})</span>
+                                        #else
+                                            <button type="button"><span class="icon-warning-sign"></span>待完成</button>
+                                        #end
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="yearGoal">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="monthGoal">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="weekGoal">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">学习Vue.js!</div>
-                                <div class="panel-body">
-                                    不能再墨迹了哦！ 你到底要做什么？
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">学习Webpack！</div>
-                                <div class="panel-body">
-                                    不能再这么墨迹下去了哦！ 好好努力，你才会NB的哦！
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">学习Node.js!</div>
-                                <div class="panel-body">
-                                    不断的学习，才能保证自己不被淘汰哦！
-                                </div>
-                            </div>
-                        </div>
+                        #end
                     </div>
                 </div>
             </div>
@@ -374,6 +99,9 @@
     $(function () {
         $("#navbar li:eq(4) a").css('color', '#FFA549');
     })
+    function href(typeId) {
+        window.location.href = "$R.Memo?typeId=" + typeId;
+    }
 </script>
 
 </body>

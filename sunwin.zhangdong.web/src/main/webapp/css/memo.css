@@ -1,5 +1,4 @@
 
-
 .navbar-left {
     border-top: 1px solid gainsboro;
 }
@@ -9,15 +8,42 @@
     border-bottom: 1px solid gainsboro;
 }
 
-div[role="tabpanel"]  .row{
-    margin-top:1.6em;
+div[role="tabpanel"]  .row {
+    margin-top: 1.6em;
 }
 
-.panel-heading{
-    text-align:center;
+.panel {
+    position: relative;
 }
-.panel-body{
-    min-height:8em;
-    text-align:justify;
+
+.panel-heading {
+    text-align: center;
+}
+
+.panel-heading span {
+    /*float:right;     !* float使得元素向右向下了， 右下方向。  绝对定位也是一样的哦！ *!*/
+    font-size: 1.2em;
+    font-family: 宋体;
+    position: absolute;
+    right: 3px;
+    top: 5px;
+}
+
+.panel-body {
+    min-height: 8em;
+    text-align: justify;
+}
+
+.panel-footer {
+    font-size: 0.6em;
+}
+
+.panel-footer button {
+    position:absolute;
+    right: 3px;
+    bottom: 5px;
+    background: #D44B47;
+    color: white;
+    font-size:1.8em;
 }
 

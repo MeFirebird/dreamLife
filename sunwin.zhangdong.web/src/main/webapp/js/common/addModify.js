@@ -26,7 +26,7 @@ function saveData(url, formName, toListUrl) {
             window.location.href = "/" + toListUrl;
         },
 
-        error: function (xhr, textStatus, errorObject) {  //XMLHttpRequest对象、错误信息、错误对象
+        error: function (XMLHttpRequest, textStatus, errorObject) {  //XMLHttpRequest对象、错误信息、错误对象
             if (XMLHttpRequest.responseText != '') {
                 console.log(xhr);
                 console.log($("#" + formName).serialize());

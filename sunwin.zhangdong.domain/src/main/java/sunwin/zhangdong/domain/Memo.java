@@ -13,6 +13,8 @@ public class Memo {
     private Integer id;
     private String title;        // 备忘title
     private String content;      // 备忘内容
+    private String type;         // 备忘类型
+//    private int typeId;          // 备忘类型ID
     private Date createTime;     // 创建时间
     private Date finishTime;     // 完成时间
     // 备忘执行优先级      重要且紧急的domain加红字显示       1:重要且紧急   2.紧急
@@ -66,4 +68,20 @@ public class Memo {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+//    public int getTypeId() {
+//        return typeId;
+//    }
+//
+//    public void setTypeId(int typeId) {
+//        this.typeId = typeId;
+//    }
 }

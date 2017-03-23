@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class R {
+
     // 前台界面   begin    这里定义的是请求路径
     public static final String Index = "dream-heaven.html";
     public static final String Career = "career.html";
@@ -78,6 +79,8 @@ public class R {
     // 备忘录管理
     public static final String memoList = "memo.list.html";  //备忘录列表页
     public static final String memoAdd = "memo.add.html";   //备忘录创建页
+    public static final String ajax_saveMemo = "Ajax.save.memo.json";   //保存备忘录
+    public static final String memoEdit = "memo.edit.html"; //备忘编辑页
 
 
 
@@ -195,7 +198,12 @@ public class R {
     public static String getMemoList() {
         return memoList;
     }
-
+    public static String getAjax_saveMemo() {
+        return ajax_saveMemo;
+    }
+    public static String getMemoEdit() {
+        return memoEdit;
+    }
 
     // 心路历程
     public static String getDevProcess() {

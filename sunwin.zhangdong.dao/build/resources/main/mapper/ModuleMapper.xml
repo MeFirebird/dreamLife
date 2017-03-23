@@ -66,14 +66,14 @@
     </insert>
     <update id="updateModules" parameterType="sunwin.zhangdong.domain.Module">
         update modules
-        <set >
-            <if test="name != null" >
+        <set>
+            <if test="name != null">
                 name = #{name,jdbcType=VARCHAR},
             </if>
-            <if test="title != null" >
+            <if test="title != null">
                 title = #{title,jdbcType=VARCHAR},
             </if>
-            <if test="img != null" >
+            <if test="img != null">
                 img = #{img,jdbcType=VARCHAR},
             </if>
         </set>

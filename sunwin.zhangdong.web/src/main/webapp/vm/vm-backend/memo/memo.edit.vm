@@ -14,7 +14,7 @@
 
         #btn-group {
             margin-left: 80px;
-            margin-top:20px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -23,20 +23,21 @@
     <input type="hidden" id="toListUrl" value="$!R.memoList"/>
     <ul class="breadcrumb">
         <li><a href="$!R.memoList">备忘录管理</a> <span class="divider"></span></li>
-        <li class="active">创建备忘</li>
+        <li class="active">编辑备忘</li>
     </ul>
     <div class="row">
         <form class="form-inline" id="saveFrom">
             <div class="col-xs-12">
                 <div class="form-group">
                     <label for="title">备忘录标题:</label>
-                    <input type="text" size="100" class="form-control" name="title" value="" id="title">
+                    <input type="text" size="100" class="form-control" name="title" value="$memo.title" id="title">
                 </div>
             </div>
             <div class="col-xs-12">
                 <div class="form-group">
                     <label for="content">备忘录内容:</label>
-                    <input type="text" size="100" class="form-control" name="content" value="" id="content">
+                    <input type="text" size="100" class="form-control" name="content" value="$memo.content"
+                           id="content">
                 </div>
             </div>
             <div class="col-xs-12">
@@ -51,22 +52,17 @@
                     </select>
                 </div>
                 <div class="form-group" style="margin-left:40px;">
-                    <label for="title">优先级别:</label>
-                    <select class="form-control" name="level">
-                        <option value="">请选择</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                    <label for="">优先级别:</label>
+                    <input type="text" size="" class="form-control" name="level" value="$memo.level"
+                           id="">
                 </div>
             </div>
     </div>
     <div class="col-xs-12" id="btn-group">
         <div class="form-group">
         ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
-            <button type="button" class="btn btn-success" onclick="saveMemo(1)"><i class=" icon-plus-sign"></i>
-                创建
+            <button type="button" class="btn btn-success" onclick="saveMemo(2)"><i class=" icon-plus-sign"></i>
+                保存
             </button>
             <button type="reset" class="btn btn-info"><i class="icon-reply"></i> 重置</button>
         </div>
@@ -78,9 +74,7 @@
 
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/bootstrap.js"></script>
-
-
-<script src="/js/memo/addMemo.js"></script>    ## 独立的哦！
+<script src="/js/memo/editMemo.js"></script>
 <script src="/js/common/addModify.js"></script>
 
 </body>

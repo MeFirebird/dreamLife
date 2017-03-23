@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sunwin.zhangdong.dao.MemoMapper">
+    <resultMap id="BaseResultMap" type="sunwin.zhangdong.domain.Memo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="finish_time" property="finishTime" jdbcType="DATE"/>
+        <result column="level" property="level" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+    <insert id="insert" parameterType="sunwin.zhangdong.domain.Memo">
+    insert into memo (id, title, content, type
+      create_time, finish_time, level
+      )
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR},#{createTime,jdbcType=DATE}, #{finishTime,jdbcType=DATE}, #{level,jdbcType=INTEGER}
+      )
+  </insert>
+
+    <insert id="insertSelective" parameterType="sunwin.zhangdong.domain.Memo">
+        insert into memo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="finishTime != null">
+                finish_time,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=DATE},
+            </if>
+            <if test="finishTime != null">
+                #{finishTime,jdbcType=DATE},
+            </if>
+            <if test="level != null">
+                #{level,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+
+    <!-- 查询所有记录 -->
+    <select id="getMemos" resultMap="BaseResultMap">
+        select * from memo
+        <where>
+            <if test="memo != null">  <!-- domain 是mapper接口里的哦  -->
+                <if test="memo.type != null and memo.type != ''">
+                    <!-- 这里的memo是表吧！ 不能直接写type吗，必须带表名？-->
+                    and memo.type = '${memo.type}'
+                </if>
+            </if>
+        </where>
+    </select>
+    <select id="getTypes" resultType="String">
+         select DISTINCT type from memo
+    </select>
+    <select id="getMaxId" resultType="Integer">
+       SELECT MAX(id) from memo
+    </select>
+    <select id="getMemoById" resultMap="BaseResultMap">
+        SELECT * from memo where memo.id = #{id}
+    </select>
+
+
+</mapper>
