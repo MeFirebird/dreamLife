@@ -81,6 +81,8 @@ public class R {
     public static final String memoAdd = "memo.add.html";   //备忘录创建页
     public static final String ajax_saveMemo = "Ajax.save.memo.json";   //保存备忘录
     public static final String memoEdit = "memo.edit.html"; //备忘编辑页
+    public static final String ajax_updateMemo = "Ajax.update.memo.json";  // 更新备忘录
+    public static final String ajax_deleteMemo = "Ajax.deletememo.json";  // 删除备忘录
 
 
 
@@ -203,6 +205,13 @@ public class R {
     }
     public static String getMemoEdit() {
         return memoEdit;
+    }
+    public static String getAjax_updateMemo() {
+        return ajax_updateMemo;
+    }
+
+    public static String getAjax_deleteMemo() {
+        return ajax_deleteMemo;
     }
 
     // 心路历程

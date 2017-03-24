@@ -67,6 +67,7 @@ public class ThinkinglifeEController {
         return "/vm-backend/thinking-life/thinkinglife.find";    // 这里必须return  R里面随便定义
     }
 
+
     /**
      * 查：条件查询       分页查询
      * JSON:  作为返回数据哦！   ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！

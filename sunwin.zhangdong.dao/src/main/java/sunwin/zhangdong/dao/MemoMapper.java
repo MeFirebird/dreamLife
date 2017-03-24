@@ -11,6 +11,7 @@ import java.util.List;
 public interface MemoMapper {
 
     int delete(Memo memo);
+    int deleteMemo(Integer[] id);
 
     int insert(Memo memo);
 
@@ -26,5 +27,7 @@ public interface MemoMapper {
     int insertSelective(Memo memo);
 
     Memo getMemoById(int id);
+
+    int update(Memo memo);
 
 }

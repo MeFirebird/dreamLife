@@ -37,7 +37,7 @@
                 type,
             </if>
             <if test="createTime != null">
-                create_time,
+                create_time,                  <!-- 数据库表的哦 -->
             </if>
             <if test="finishTime != null">
                 finish_time,
@@ -94,5 +94,26 @@
         SELECT * from memo where memo.id = #{id}
     </select>
 
+    <update id="update" parameterType="sunwin.zhangdong.domain.Memo">
+        update memo
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="level != null">
+                level = #{level,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <delete id="deleteMemo" parameterType="Integer">
+        DELETE FROM memo where id IN
+        <foreach collection="array" item="idItem" open="(" separator="," close=")">
+            #{idItem}
+        </foreach>
+    </delete>
 
 </mapper>

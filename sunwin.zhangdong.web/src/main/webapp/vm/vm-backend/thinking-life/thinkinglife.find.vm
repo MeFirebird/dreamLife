@@ -19,24 +19,25 @@
                     <div class="col-xs-12">
                         <fieldset>
                             <div class="form-group col-xs-3">
-                                <input type="text" class="form-control" id="title" placeholder="标题">
+                                <input type="text" class="form-control" id="title" name="thinkingTitle" placeholder="标题">
                             </div>
                             <div class="form-group col-xs-3">
                                 <div class="input-group date form_date">
-                                    <input class="form-control" size="16" type="text" value="" readonly=""
+                                    <input class="form-control" size="16" type="text" value=""  name="createTime" readonly=""
                                            placeholder="选择日期">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                                 </div>
                             </div>
                             <div class="form-group col-xs-3">
-                                <select class="form-control" id="type">
-                                    <option>我的日记</option>
-                                    <option>新闻观后感</option>
-                                    <option>说服自己</option>
+                                <select class="form-control" id="type" name="thinkingType">
+                                    <option value="">请选择</option>
+                                    <option value="我的日记">我的日记</option>
+                                    <option value="新闻读后感">新闻读后感</option>
+                                    <option value="说服自己">说服自己</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-info"><i class="icon-search"></i> 查询</button>
+                                <button id="query" class="btn btn-info"><i class="icon-search"></i> 查询</button>
                                 <button type="reset" class="btn btn-warning"><i class="icon-share-alt"></i> 重置</button>
                             </div>
                         </fieldset>
@@ -69,24 +70,24 @@
                         </tr>
                         </thead>
                         <tbody id="tbody">
-                            #foreach($domain in $domains)
-                            <tr>
-                                <td style="width: 30px; text-align: center;">
-                                    <input class="active" type="checkbox">
-                                </td>
-                                <td>$domain.id</td>
-                                <td>$domain.thinkingTitle</td>
-                                <td>$domain.thinkingType</td>
-                                <td>
-                                    #set($content = $domain.thinkingContent)
-                            #if($content && $content.length() > 30)
-                                    #set($content = $content.substring(0,30) + "...")
-                                #end
-                            $content
-                                </td>
-                                <td>$!tools.getDateTime($!domain.createTime)</td>
-                            </tr>
-                            #end
+##                            #foreach($domain in $resultList)
+##                            <tr>
+##                                <td style="width: 30px; text-align: center;">
+##                                    <input class="active" type="checkbox">
+##                                </td>
+##                                <td>$domain.id</td>
+##                                <td>$domain.thinkingTitle</td>
+##                                <td>$domain.thinkingType</td>
+##                                <td>
+##                                    #set($content = $domain.thinkingContent)
+##                            #if($content && $content.length() > 30)
+##                                    #set($content = $content.substring(0,30) + "...")
+##                                #end
+##                            $content
+##                                </td>
+##                                <td>$!tools.getDateTime($!domain.createTime)</td>
+##                            </tr>
+##                            #end
                         </tbody>
                     </table>
                 </div>
@@ -98,12 +99,11 @@
     <input type="text" id="saveUrl" value="$!R.ajax_FindTL"/>   ## 条件查询
     <input type="text" id="editUrl" value="$!R.editTL"/>   ## 编辑页面
     <input type="text" id="deleteUrl" value="$!R.ajax_deleteTL"/>   ## 删除记录
-    <input type="text" id="index"  value="$!domain.id"/>
 </div>
 
 <script src="/js/jquery-2.0.0.js"></script>
-<script src="/js/guidelines/modifyGL.js"></script>
-<script src="/js/guidelines/deleteGL.js"></script>
+<script src="/js/thinkingLife/editTL.js"></script>
+<script src="/js/thinkingLife/deleteTL.js"></script>
 <script src="/js/bootstrap.js"></script>
 <script src="/js/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript">
@@ -119,11 +119,12 @@
     // 不是一个页面，为什么会这样呢？ 还需要remove
     $(".nav-sidebar").children().eq(2).addClass("active").siblings().removeClass("active");
 
+
+
     $(function () {
-        $("button[type='submit']").click(function (e) {
+        $("#query").click(function (e) {
             alert('hello');
             e.preventDefault();     // 阻止表单的提交方式
-            var id = $("#index").val();
             var dataParam=resultDataParam();
             console.log(dataParam);
             $.ajax({
@@ -155,7 +156,7 @@
         }
 
 
-        //组装列表数据
+        // 生成html代码，将返回的数据绑定到html
         function getTableBody(resultList, startIndex) {
             var length = resultList.length;
             var htmlcontent = '';
@@ -163,9 +164,11 @@
                 var obj = resultList[i];
                 htmlcontent += '<tr style="background: white;">';
                 htmlcontent += '<td style="width: 30px; text-align: center;"><input type="checkbox"></td>';
-                htmlcontent += '<td>' + id +'</td>';
+                htmlcontent += '<td>' + obj.id +'</td>';
                 htmlcontent += '<td>' + obj.thinkingTitle + '</td>';
                 htmlcontent += '<td>' + obj.thinkingType + '</td>';
+                htmlcontent += '<td>' + obj.thinkingContent + '</td>';
+                htmlcontent += '<td>' + obj.createTime + '</td>';
                 htmlcontent += '</tr>';
             }
             return htmlcontent;

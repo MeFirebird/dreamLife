@@ -92,7 +92,7 @@
 
     <input type="hidden" id="saveUrl" value=""/>   ## 创建
     <input type="hidden" id="editUrl" value="$R.memoEdit"/>   ## 编辑页面
-    <input type="hidden" id="deleteUrl" value="$R.ajax_deleteModule"/>  ## 删除页面
+    <input type="hidden" id="deleteUrl" value="$R.ajax_deleteMemo"/>  ## 删除页面
 </div>
 
 <script src="/js/jquery-2.0.0.js"></script>

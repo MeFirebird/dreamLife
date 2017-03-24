@@ -56,8 +56,8 @@ public class MemoController {
             mav.addObject("dangers", dangers);
             // 删除memos中的前三条哦
             memos.remove(0);
-            memos.remove(1);
-            memos.remove(2);
+            memos.remove(0);
+            memos.remove(0);
             mav.addObject("memos", memos);
         }
         return mav;

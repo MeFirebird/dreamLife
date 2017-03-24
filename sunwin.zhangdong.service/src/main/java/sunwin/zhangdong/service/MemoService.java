@@ -3,6 +3,7 @@ package sunwin.zhangdong.service;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sunwin.zhangdong.comm.YogmsPage;
 import sunwin.zhangdong.dao.MemoMapper;
 import sunwin.zhangdong.domain.Memo;
@@ -61,5 +62,28 @@ public class MemoService {
     public Memo getMemoById(int id){
         return memoMapper.getMemoById(id);
     }
+
+
+    /**
+     *   编辑后保存memo
+     * @param memo
+     * @return
+     */
+    public void updateMemo(Memo memo) throws Exception{
+
+          if(memoMapper.update(memo) != 1){
+             throw new Exception("编辑更新失败！");
+          }
+    }
+
+    /**
+     *
+     * @param ids
+     */
+    @Transactional
+    public void deleteMemo(Integer[] ids){
+        memoMapper.deleteMemo(ids);
+    }
+
 
 }

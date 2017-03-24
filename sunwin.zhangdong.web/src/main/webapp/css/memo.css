@@ -32,6 +32,7 @@ div[role="tabpanel"]  .row {
 .panel-body {
     min-height: 8em;
     text-align: justify;
+    line-height:1.5em;
 }
 
 .panel-footer {

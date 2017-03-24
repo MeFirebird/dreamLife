@@ -63,7 +63,7 @@
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
                                         $memo.title
-                                        <span class="label label-info">$memo.level</span>
+                                        <span class="label label-warning">$memo.level</span>
                                     </div>
                                     <div class="panel-body">
                                         $memo.content

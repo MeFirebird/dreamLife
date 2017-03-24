@@ -32,7 +32,7 @@ public class YoisVelocityTools {
      */
     public String getDateTime(Date date){
         JDateTime dateTime = new JDateTime(date);
-        return dateTime.toString("YYYY-MM-DD hh:mm");
+        return dateTime.toString("YYYY-MM-DD");
     }
 
     /**

@@ -42,23 +42,22 @@ public class MemoEController {
      */
     @RequestMapping(value = R.memoList)
     public ModelAndView memoList(Memo memo,
-                                 @RequestParam(required = false, defaultValue = "1") int current){
+                                 @RequestParam(required = false, defaultValue = "1") int current) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/vm-backend/memo/memo.list");
         // 查询数据
         YogmsPage yogmsPage = new YogmsPage();
         yogmsPage.setCurrent(current);
         yogmsPage.setPageSize(9);
-        List<Memo>  memos = memoService.getMemos(memo,yogmsPage);
+        List<Memo> memos = memoService.getMemos(memo, yogmsPage);
         List<String> types = memoService.getTypes();   // 所有的类型
-        mav.addObject("types",types);
-        mav.addObject("memos",memos);
-        mav.addObject("yogmsPage",yogmsPage);  // 页面分页
+        mav.addObject("types", types);
+        mav.addObject("memos", memos);
+        mav.addObject("yogmsPage", yogmsPage);  // 页面分页
         mav.addObject("tools", tools);      //解析日期哦
-        mav.addObject("pages",pageUtil.getPageData(yogmsPage,R.memoList,null));//分页按钮控制
+        mav.addObject("pages", pageUtil.getPageData(yogmsPage, R.memoList, null));//分页按钮控制
         return mav;
     }
-
 
 
     /**
@@ -76,6 +75,7 @@ public class MemoEController {
 
     /**
      * 备忘录创建
+     *
      * @param memo
      * @return
      * @throws Exception
@@ -97,11 +97,60 @@ public class MemoEController {
         return json;
     }
 
+    /**
+     * @param id 编辑页面
+     * @return
+     */
     @RequestMapping(value = R.memoEdit)
-    public ModelAndView editMemo(int id){
+    public ModelAndView editMemo(int id) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/vm-backend/memo/memo.edit");
-        mav.addObject("memo",memoService.getMemoById(id));
+        mav.addObject("memo", memoService.getMemoById(id));
         return mav;
     }
+
+
+    /**
+     * 保存编辑后的备忘录
+     *
+     * @param memo
+     * @return
+     */
+    @RequestMapping(value = R.ajax_updateMemo)
+    @ResponseBody
+    public JSON updateMemo(Memo memo) {
+        JSON json = null;
+        AjaxResult result = new AjaxResult();
+        try {
+            memoService.updateMemo(memo);
+            result.setStatus(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.setStatus(false);
+        }
+        json = JSONObject.fromObject(result);
+        return json;
+    }
+
+
+    /**
+     *    删除备忘录
+     * @param ids
+     * @return
+     */
+    @RequestMapping(value = R.ajax_deleteMemo)
+    @ResponseBody
+    public JSON deleteMemo(Integer[] ids) {
+        JSON json = null;
+        AjaxResult result = new AjaxResult();
+        try{
+            memoService.deleteMemo(ids);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        json = JSONObject.fromObject(result);
+        return  json;
+    }
+
+
 }

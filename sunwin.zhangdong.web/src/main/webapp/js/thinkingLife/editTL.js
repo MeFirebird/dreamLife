@@ -1,6 +1,6 @@
 // 跳转到修改页面
 var url = $("#editUrl").val();
-function toEditMemo(){
+function toModifyGL(){
     var num = 0;   // 被选中的条目
     var id = "";
     $("td input:checkbox").each(function(){
@@ -16,16 +16,5 @@ function toEditMemo(){
         return;
     }
     window.location.href="/"+url +"?id="+id;
-}
-
-
-// 编辑后保存
-function EidtMemo(){
-
-    var url = $("#saveUrl").val();
-    var listUrl = $("#toListUrl").val();
-    // 发起ajax请求
-    saveData(url,"saveFrom",listUrl);
-
 }
 

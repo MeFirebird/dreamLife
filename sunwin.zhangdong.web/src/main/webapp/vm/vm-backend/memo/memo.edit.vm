@@ -28,6 +28,7 @@
     <div class="row">
         <form class="form-inline" id="saveFrom">
             <div class="col-xs-12">
+                <input type="hidden" name="id" value="$memo.id"/>  ## 跳转到此页面时绑定的id哦！
                 <div class="form-group">
                     <label for="title">备忘录标题:</label>
                     <input type="text" size="100" class="form-control" name="title" value="$memo.title" id="title">
@@ -43,13 +44,14 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label for="title">备忘录类型:</label>
-                    <select class="form-control" name="type">
+                    <select class="form-control" name="type" disabled>
                         <option value="">请选择</option>
                         <option value="周目标">周目标</option>
                         <option value="月目标">月目标</option>
                         <option value="年目标">年目标</option>
                         <option value="待分配目标">待分配目标</option>
                     </select>
+                    <span style="color:red;">这个不能编辑哦！绝对不能一推再推自己的目标！</span>
                 </div>
                 <div class="form-group" style="margin-left:40px;">
                     <label for="">优先级别:</label>
@@ -61,7 +63,7 @@
     <div class="col-xs-12" id="btn-group">
         <div class="form-group">
         ## 先用ajax提交哦，之前王工遇到的：type=“submit”是用表单提交哦
-            <button type="button" class="btn btn-success" onclick="saveMemo(2)"><i class=" icon-plus-sign"></i>
+            <button type="button" class="btn btn-success" onclick="EidtMemo()"><i class=" icon-plus-sign"></i>
                 保存
             </button>
             <button type="reset" class="btn btn-info"><i class="icon-reply"></i> 重置</button>
@@ -70,7 +72,7 @@
     </form>
 </div>
 </div>
-<input type="text" value="$R.ajax_saveMemo" id="saveUrl"/>   ##保存url
+<input type="text" value="$R.ajax_updateMemo" id="saveUrl"/>   ##保存url
 
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/bootstrap.js"></script>
