@@ -12,8 +12,8 @@
 ***
 
 ###  技术栈： bootstrap jquery  velocity  springMVC  spring事务  mybatis  mysql 
-构建工具： gradle  
-版本管理：git 
+###  构建工具： gradle  
+###  版本管理：git 
 
 ***
 
